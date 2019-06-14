@@ -1,14 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import emcee
+import scipy
+import scipy.integrate
 
 
 class NonParametrized(object):
 
-    #TODO: will do later once I have a better idea of what properties an object of this class needs
-    #def __init__(self):
+    # TODO: will do later once I have a better idea of what properties an object of this class needs
+    # def __init__(self):
 
-    def g2(self, f, d, y, stuff, time):
+    @staticmethod
+    def g2(f, d, y, stuff, time):
         m, c, delta_d, eta, n, theta, k_b, temp, lambda_0, beta = stuff
         g2 = np.ones(len(d))
         currentsum = 0
@@ -31,7 +34,8 @@ class NonParametrized(object):
         return g2
 
 #######################################################################################
-    def numericalDeriv(self, degree, f):
+    @staticmethod
+    def numerical_deriv(degree, f):
         # calculates the nth numerical derivative of a given array of data points, using finite difference
         # degree : the degree of your desired numerical derivative calculation
         # f : array of data points
@@ -56,7 +60,7 @@ class NonParametrized(object):
         #    f_2ndDeriv = np.gradient(f_firstDeriv)
         #    a = np.dot(-f_tranpose, f_2ndDeriv)        # look up Numerical Recipes for second derivative matrix
 
-        f_2ndDeriv = self.numericalDeriv(2, f)
+        f_2ndDeriv = self.numerical_deriv(2, f)
         a = np.dot(f_2ndDeriv, f_2ndDeriv.transpose())
 
         foundZero = False
@@ -97,3 +101,21 @@ class NonParametrized(object):
         k = -m * (0.5 * np.log(2 * np.pi) + np.log(sig_y))
 
         return k - 0.5 * chi_square
+    ###################################################################################
+
+    @staticmethod
+    def normalize(f, d, stuff, time):
+        # this function normalizes the integral of g(1) before the inference stage
+        # returns the normalization constant that sticks to the front of the g(1) integral
+        m, c, delta_d, eta, n, theta, k_b, temp, lambda_0, beta = stuff
+
+        gamma = (16 * np.pi * (n ** 2) * ((np.sin(theta / 2)) ** 2) * k_b * temp) / (3 * eta * lambda_0 ** 2)
+        g1_integrand = f * np.e ** (-(gamma / d) * time)
+        integral = scipy.integrate.trapz(g1_integrand)
+
+        normalizationconstant = 1 / integral
+
+        return normalizationconstant
+
+    ####################################################################################
+
