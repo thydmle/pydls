@@ -70,19 +70,46 @@ When tested against the cummulants model, the residuals plot is as follows:
 In conclusion, the residuals plots have shown that both the single exponential and the cummulants model were unable to fully capture the information displayed in the $g^{(2)}$ autocorrelation and therefore should not be used in analyzing dynamic light scattering information of samples with know multimodal particle size distributions. 
 
 \subsection{Single Gaussian distribution}
+Write about tests of the g(2) model using a single Gaussian distribution of particle sizes. In this test, the expected results are that the method of cumulants and the single exponential model both fail to completely capture the physics, shown by a residual plot that exhibits overshooting and undershooting of results.
 
 \section{Derivation of Bayesian distributions}
 \subsection{Prior Distribution}
 According to Buoalem, Jabloun, Ravier, Naiim and Jalocha, the prior distribution of this non-parametrized method is as follows:
-\begin{equation}
+
+\begin{equation}\label{eq:prior}
 p(\mathbf{f}) \propto exp\left( \mathbf{f}^{T} \mathbf{L_2}^{T}\mathbf{L_2}\mathbf{f} \right), \textrm{if } \mathbf{g} \geq 0
 \end{equation}
 
 \subsection{Likelihood Distribution}
 The likelihood distribution is modeled according to the $g^{(2)}$ function as 
 
-\begin{equation}
-p(\mathbf{\sim{g^{(2)}}} | \mathbf{f}, \sigma^{2}_r ) = \frac{1}{{(2\pi)}^{\frac{M_r}{2}} \sigma^{M_r}}exp\left( -\frac{\chi_r(\mathbf{g})}{2\sigma^2_r}\right)
+\begin{equation} \label{eq:likelihood}
+p(\mathbf{\tilde{g}^{(2)}} | \mathbf{f}, \sigma^{2}_r ) = \frac{1}{{(2\pi)}^{\frac{M_r}{2}} \sigma^{M_r}}exp\left( -\frac{\chi_r(\mathbf{f})}{2\sigma^2_r}\right)
 \end{equation}
-if the 
+if $\mathbf{f} \geq 0$.
+
+The $\chi$-squared $\chi_r(\mathbf{f})$ is defined as 
+
+\begin{equation}
+\chi_r(\mathbf{f}) = \sum_{j=1}^{M_r} {\left( \tilde{g}_{\theta_r}^{(2)} (\tau_j) - g_{\theta_r}^{(2)} (\tau_j) \right)}^2
+\end{equation}
+
+\subsection{Posterior Distribution}
+With the prior and likelihood distributions described in Eq.~\ref{eq:prior} and Eq.~\ref{eq:likelihood}, the posterior distribution for the particle size distribution with the noise variance given the measured autocorrelation data ($g^{(2)}$) is: 
+
+\begin{equation}\label{eq:posterior}
+p(\mathbf{f}, \sigma_1^2,\ldots, \sigma_R^2|\mathbf{\tilde{g}^{(2)}}) \propto exp \left( -\mathbf{f}^T\mathbf{L_2}^T\mathbf{L_2} \right) \prod_{r=1}^{R} \left[ \frac{1}{\sigma_r^{M_r+2}} exp \left( -\frac{\chi_R(\mathbf{f})}{2\sigma_r^2} \right) \right]
+\end{equation}
+
+Using the classical Jeffrey prior density for the noise variance in $\mathbf{\tilde{g}^{(2)}}$,
+\begin{equation}\label{eq:noisevariance}
+p(\sigma_r^2) \propto \frac{1}{\sigma_r^2}
+\end{equation}
+the posterior distribution can be integrated over the noise variance with the following integral:
+
+\begin{equation}
+\int_{0}^{\infty} \frac{1}{\sigma_R^{M_R + 2}} exp \left( -\frac{\chi_r(\mathbf{f})}{2\sigma_R^2} \right)d\sigma_R
+\end{equation}
+ 
+ In order to integrate this integral, let $\sigma_R = \frac{1}{t}$ and thus $d\sigma_R = -\frac{1}{t^2}dt$
 \end{document}
