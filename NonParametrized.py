@@ -146,6 +146,10 @@ class NonParametrized(object):
 
     # def plot_sampler(self):
     # still not sure how to automate this plotting process
-
+    # TODO
     # stub function?
     # find the burn-in average
+    # OK SO we can write a stub function that plots a thing that is called everytime something needs to be plotted
+    # can be computationally expensive
+
+    
