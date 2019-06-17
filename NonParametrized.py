@@ -112,7 +112,8 @@ class NonParametrized(object):
 
         return k - 0.5 * chi_square
     ###################################################################################
-
+    # dont normalize g1, normalize the denominator thing! no tau dependence
+    # TODO: fix
     @staticmethod
     def normalize(f, d, stuff, time):
         # this function normalizes the integral of g(1) before the inference stage
@@ -146,3 +147,5 @@ class NonParametrized(object):
     # def plot_sampler(self):
     # still not sure how to automate this plotting process
 
+    # stub function?
+    # find the burn-in average
