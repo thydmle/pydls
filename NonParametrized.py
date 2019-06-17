@@ -8,7 +8,9 @@ import scipy.integrate
 class NonParametrized(object):
 
     # TODO: will do later once I have a better idea of what properties an object of this class needs
-    # def __init__(self):
+    def __init__(self, ndim):
+        self.sampler = 0
+        self.ndim = ndim
 
     @staticmethod
     def g2(f, d, y, stuff, time):
@@ -81,6 +83,9 @@ class NonParametrized(object):
         # if a value of f was negative, then the prior is zero, and ln(0) is infinity
 #######################################################################################
 
+    # needs to redefine likelihood function
+    # before form? after integration form?
+
     def log_likelihood(self, f, d, y, stuff, time):
         m, c, delta_d, eta, n, theta, k_b, temp, lambda_0, beta = stuff
 
@@ -89,6 +94,7 @@ class NonParametrized(object):
         # usually, this parameter is given as part of the instrumentation
         sig_y = 1e-2  # infer noise variance
 
+        # sig_y = the noise variance
         function = g2_result  # some instruments spit out 1 + g2
         residuals = (y - function) ** 2
         chi_square = np.sum((residuals) / sig_y ** 2)
@@ -99,6 +105,10 @@ class NonParametrized(object):
         # even further, we get a much nicer expression
 
         k = -m * (0.5 * np.log(2 * np.pi) + np.log(sig_y))
+
+        # alternative model for the likelihood based on integration
+        # over noise variance
+
 
         return k - 0.5 * chi_square
     ###################################################################################
@@ -118,4 +128,21 @@ class NonParametrized(object):
         return normalizationconstant
 
     ####################################################################################
+
+    def log_posterior(self, f, d, y, stuff, time):
+        return self.log_prior(f) + self.log_likelihood(f, d, y, stuff, time)
+
+    ################################################################################
+
+    def infer(self, nsteps, nwalkers, g2_data, d, stuff, time):
+        prelim_pos = np.zeros(self.ndim)
+        start_pos = [prelim_pos + 1e-4*np.random.randn(self.ndim)]
+
+        self.sampler = emcee.EnsembleSampler(nwalkers, self.ndim, self.log_posterior, args=(g2_data, d, stuff, time))
+        self.sampler.run_mcmc(start_pos, nsteps)
+
+    ####################################
+
+    # def plot_sampler(self):
+    # still not sure how to automate this plotting process
 
