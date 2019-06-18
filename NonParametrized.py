@@ -102,21 +102,19 @@ class NonParametrized(object):
 
         # sig_y = the noise variance
         function = g2_result  # some instruments spit out 1 + g2
-        residuals = (y - function) ** 2
-        chi_square = np.sum((residuals) / sig_y ** 2)
+        residuals = (y - function)**2
 
         # K constant before chi square is defined as
         # K = ln(1/(2*pi)^(m/2)*sig_y^(m))
         # k = np.log(1/((2*np.pi)**(m/2)*sig_y**m))  Gets into errors of zero division so if we simplify the log
         # even further, we get a much nicer expression
 
-        k = -m * (0.5 * np.log(2 * np.pi) + np.log(sig_y))
+        # k = -m * (0.5 * np.log(2 * np.pi) + np.log(sig_y))
 
         # alternative model for the likelihood based on integration
         # over noise variance
+        return -(m/2)*np.log(residuals)
 
-
-        return k - 0.5 * chi_square
     ###################################################################################
     # dont normalize g1, normalize the denominator thing! no tau dependence
     # TODO: fix
