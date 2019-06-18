@@ -98,7 +98,7 @@ The $\chi$-squared $\chi_r(\mathbf{f})$ is defined as
 With the prior and likelihood distributions described in Eq.~\ref{eq:prior} and Eq.~\ref{eq:likelihood}, the posterior distribution for the particle size distribution with the noise variance given the measured autocorrelation data ($g^{(2)}$) is: 
 
 \begin{equation}\label{eq:posterior}
-p(\mathbf{f}, \sigma_1^2,\ldots, \sigma_R^2|\mathbf{\tilde{g}^{(2)}}) \propto exp \left( -\mathbf{f}^T\mathbf{L_2}^T\mathbf{L_2} \right) \prod_{r=1}^{R} \left[ \frac{1}{\sigma_r^{M_r+2}} exp \left( -\frac{\chi_R(\mathbf{f})}{2\sigma_r^2} \right) \right]
+p(\mathbf{f}, \sigma_1^2,\ldots, \sigma_r^2|\mathbf{\tilde{g}^{(2)}}) \propto exp \left( -\mathbf{f}^T\mathbf{L_2}^T\mathbf{L_2} \right) \prod_{r=1}^{R} \left[ \frac{1}{\sigma_r^{M_r+2}} exp \left( -\frac{\chi_r(\mathbf{f})}{2\sigma_r^2} \right) \right]
 \end{equation}
 
 Using the classical Jeffrey prior density for the noise variance in $\mathbf{\tilde{g}^{(2)}}$,
@@ -107,9 +107,91 @@ p(\sigma_r^2) \propto \frac{1}{\sigma_r^2}
 \end{equation}
 the posterior distribution can be integrated over the noise variance with the following integral:
 
-\begin{equation}
-\int_{0}^{\infty} \frac{1}{\sigma_R^{M_R + 2}} exp \left( -\frac{\chi_r(\mathbf{f})}{2\sigma_R^2} \right)d\sigma_R
+\begin{equation} \label{eq:originalIntegral}
+\int_{0}^{\infty} \frac{1}{\sigma_r^{M_r + 2}} exp \left( -\frac{\chi_r(\mathbf{f})}{2\sigma_r^2} \right)d\sigma_r
 \end{equation}
  
- In order to integrate this integral, let $\sigma_R = \frac{1}{t}$ and thus $d\sigma_R = -\frac{1}{t^2}dt$
+ In order to integrate this integral, let $\sigma_r = \frac{1}{t}$ and thus $d\sigma_r = -\frac{1}{t^2}dt$. From this, we can rewrite expressions from the integrand in Eq.~\ref{eq:originalIntegral} as follows.
+  \begin{equation}
+ \begin{split}
+ \frac{1}{\sigma_R^{M_r + 2} } & = t^{M_r + 2} \\
+ \frac{\chi_r(\mathbf{f})}{2\sigma_r^2} & = \frac{\chi_r(\mathbf{f})}{2} t^2
+ \end{split}
+ \end{equation}
+ Thus the integral from Eq.~\ref{eq:originalIntegral} becomes:
+ \begin{equation} \label{eq:substitution1}
+ \begin{split}
+&  \int_{\infty}^{0} t^{M_r + 2} \left( -\frac{1}{t^2} \right)exp \left( -\frac{\chi_r(\mathbf{f})}{2} t^2 \right) dt \\
+& =  \int_{0}^{\infty} t^{M_r}exp\left( -\frac{\chi_r(\mathbf{f})}{2} t^2 \right) dt
+ \end{split}
+ \end{equation}
+ The limits switched from (0, $\infty$) in Eq.~\ref{eq:originalIntegral} to ($\infty$, 0) in Eq.~\ref{eq:substitution1} because of the substitution $\sigma_r = \frac{1}{t}$. The reciprocal relationship of the substitution switched the limits of the integration. In order to make the integral easier to integrate, the minus sign on the second line of Eq.~\ref{eq:substitution1} is exchanged for the re-switching of the integration limits from ($\infty$, 0) back to (0, $\infty$). 
+ 
+ In order to actually integrate Eq.~\ref{eq:substitution1}, a second substitution has to be made. Let $\tau = t\sqrt{\chi_r}$ and d$\tau = \sqrt{\tau}$dt. From this, we can rewrite the expressions in the integrand of Eq.~\ref{eq:substitution1} as follows. 
+ \begin{equation}
+ \begin{split}
+ \chi_r(\mathbf{f}) t^2 & = \tau^2 \\
+ t^{M_r} & = {\left( \frac{\tau}{\sqrt{\chi_r}} \right)}^M_r \\
+ & = \tau^{M_r}\chi_r^{-\frac{M_r}{2}} 
+ \end{split}
+ \end{equation}
+ 
+ From the above substitutions, the integral becomes:
+\begin{equation}
+\begin{split}
+ & \int_{0}^{\infty}\chi_r^{-\frac{1}{2}} \tau^{M_r} \chi_r^{-\frac{M_r}{2}} exp\left( -\frac{\tau^2}{2} \right) d\tau \\
+& = \int_{0}^{\infty} \chi_r^{-\frac{1}{2}(M_r + 1)} \tau^{M_r} exp\left( -\frac{\tau^2}{2} \right) d\tau
+\end{split}
+\end{equation}
+
+Since the $\chi_r$ term does not have $\tau$ dependence, we can pull that out of the integrand, giving us the following integral at the end:
+\begin{equation}
+\chi_r^{-\frac{1}{2}(M_r + 1) }\int_{0}^{\infty}\tau^{M_r}exp\left( -\frac{\tau^2}{2} \right) d\tau
+\end{equation}
+
+Recall that the $\chi_r$ expression was previously 
+\begin{equation}
+\chi_r(\mathbf{f}) = \sum_{j=1}^{M_r} {\left( \tilde{g}^{(2)}_{\theta_r} (\tau_j) - g^{(2)}_{\theta_r}(\tau_j) \right)}^2
+\end{equation}
+where $\tilde{g}^{(2)}$ is modeled to be:
+\begin{equation}
+\begin{split}
+ \tilde{g}^{(2)}_{\theta_r} (\tau_j) & = 1 + \beta_r {\left( k_{\theta_r}\sum_{i=1}^{N}f(D_i) C_{I,\theta_r}(D_i) exp\left( -\frac{\Gamma_{0,\theta_r}}{D} \tau_j \right) \Delta D_i \right)}^2 \\
+\text{where } \Gamma_{0,\theta_r} & = \frac{16\pi n^2 \sin^2(\theta/2)k_B T}{2\lambda_0^2\eta}
+ \end{split}
+\end{equation}
+
+with 
+
+\begin{equation}
+\begin{split}
+& \text{n } : \text{refractive index}\\
+& \theta\text{ : angle at which scattered light was measured}\\
+& k_B\text{ : Boltzmann constant} \\
+& T\text{ : temperature in Kelvin} \\
+& \lambda_0\text{ : incident wavelength value in vacuum}\\
+& \eta\text{ : viscosity} \\
+& D_i\text{ : diameter of particle size}\\
+& \beta_r\text{ : instrumental factor}\\
+& k_{\theta_r}\text{ : normalization constant that can be found via k = }\frac{1}{\int_{0}^{\infty} f(D)C_{I,\theta}(D) dD}\\
+&\tau_j\text{ : delay times} \\
+&f(D)\text{ : the particle size distribution function}
+\end{split}
+\end{equation}
+
+The posterior distribution is now defined to be:
+\begin{equation}
+p(\mathbf{f}|\tilde{\mathbf{g}}^{(2)}) \propto exp\left( -\mathbf{f}^T\mathbf{L_2}^T \mathbf{L_2}\mathbf{f}\right) \prod_{r=1}^{R} {\left[\chi_r(\mathbf{f})\right]}^{-\frac{M_r}{2}}
+\end{equation}
+
+Since $\chi_r(\mathbf{f}) = \sum {\left( \tilde{g}^{(2)}_{\theta_r} (\tau_j) - g^{(2)}_{\theta_r}(\tau_j) \right)}^2$, the posterior distribution is essentially:
+\begin{equation}
+p(\mathbf{f}|\tilde{\mathbf{g}}^{(2)}) \propto exp\left( -\mathbf{f}^T\mathbf{L_2}^T \mathbf{L_2}\mathbf{f}\right) \prod_{r=1}^{R} {\left( \sum{(\tilde{g}^{(2)}_{\theta_r} (\tau_j) - g^{(2)}_{\theta_r}(\tau_j) )}^2 \right)}^{-\frac{M_r}{2}}
+\end{equation}
+
+When the log of the posterior is taken, the above equation becomes:
+\begin{equation}
+\ln(p) = -\mathbf{f}^T\mathbf{L_2}^T \mathbf{L_2}\mathbf{f} + \left(-\frac{M_r}{2} \right) \ln \left(\sum {\left( \tilde{g}^{(2)}_{\theta_r} (\tau_j) - g^{(2)}_{\theta_r} (\tau_j) \right)}^2 \right)
+\end{equation}
+
 \end{document}
