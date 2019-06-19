@@ -10,13 +10,15 @@ import pandas as pn
 class NonParametrized(object):
 
     # TODO: will do later once I have a better idea of what properties an object of this class needs
-    def __init__(self, ndim, d_bins):
+    def __init__(self, ndim, nwalkers, nsteps, d_bins):
         self.sampler = 0
         # the user who initialized the NonParametrized object should have an idea
         # of the dimension of the parameter space
         self.ndim = ndim
         # how many bins of particle diameter sizes a user would like to infer
         self.d = np.zeros(d_bins)
+        self.nwalkers = nwalkers
+        self.nsteps = nsteps
 
     @staticmethod
     def g2(f, d, y, stuff, time):
@@ -100,20 +102,13 @@ class NonParametrized(object):
         # usually, this parameter is given as part of the instrumentation
         sig_y = 1e-2  # infer noise variance
 
-        # sig_y = the noise variance
         function = g2_result  # some instruments spit out 1 + g2
         residuals = (y - function)**2
-
-        # K constant before chi square is defined as
-        # K = ln(1/(2*pi)^(m/2)*sig_y^(m))
-        # k = np.log(1/((2*np.pi)**(m/2)*sig_y**m))  Gets into errors of zero division so if we simplify the log
-        # even further, we get a much nicer expression
-
-        # k = -m * (0.5 * np.log(2 * np.pi) + np.log(sig_y))
+        chi_square = np.sum(residuals)
 
         # alternative model for the likelihood based on integration
         # over noise variance
-        return -(m/2)*np.log(residuals)
+        return -(m/2)*np.log(chi_square)
 
     ###################################################################################
     # dont normalize g1, normalize the denominator thing! no tau dependence
@@ -138,12 +133,12 @@ class NonParametrized(object):
 
     ################################################################################
 
-    def infer(self, nsteps, nwalkers, g2_data, d, stuff, time):
+    def infer(self, g2_data, d, stuff, time):
         prelim_pos = np.zeros(self.ndim)
-        start_pos = [prelim_pos + 1e-4*np.random.randn(self.ndim)]
+        start_pos = [prelim_pos + 1e-4*np.random.randn(self.ndim) for i in range(self.nwalkers)]
 
-        self.sampler = emcee.EnsembleSampler(nwalkers, self.ndim, self.log_posterior, args=(g2_data, self.d, stuff, time))
-        self.sampler.run_mcmc(start_pos, nsteps)
+        self.sampler = emcee.EnsembleSampler(self.nwalkers, self.ndim, self.log_posterior, args=(g2_data, self.d, stuff, time))
+        self.sampler.run_mcmc(start_pos, self.nsteps)
 
     ####################################
 
@@ -166,14 +161,16 @@ class NonParametrized(object):
                   'axes.titlesize': 'x-large',
                   'xtick.labelsize': 'x-large',
                   'ytick.labelsize': 'x-large'}
-        axes = np.array([])
-        fig, axes = plt.subplots(self.ndim)
-        for i in range(self.ndim):
-            axes[i].set(ylabel='f of ' + self.d[i])
-
-        for i in range(self.ndim):  # type: int
-            for j in range(10):
-                sns.tsplot(self.sampler.chain[j, :, i], ax=axes[i])
+        # axes = np.array([])
+        # fig, axes = plt.subplots(self.ndim)
+        # for i in range(self.ndim):
+        #     axes[i].set(ylabel='f of ' + self.d[i])
+        #
+        # for i in range(self.ndim):  # type: int
+        #     for j in range(10):
+        #         sns.tsplot(self.sampler.chain[j, :, i], ax=axes[i])
+        # REASON for commenting out code: np.array wouldn't work with a list of Axes objects. Will need to come up with
+        # another method of grouping the figures together 
 
     #########################################################
 
