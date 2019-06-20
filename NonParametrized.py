@@ -170,7 +170,7 @@ class NonParametrized(object):
         #     for j in range(10):
         #         sns.tsplot(self.sampler.chain[j, :, i], ax=axes[i])
         # REASON for commenting out code: np.array wouldn't work with a list of Axes objects. Will need to come up with
-        # another method of grouping the figures together 
+        # another method of grouping the figures together
 
     #########################################################
 
