@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NonParametrized.py" beforeDir="false" afterPath="$PROJECT_DIR$/NonParametrized.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +13,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NonParametrized.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="249">
               <caret line="133" column="43" selection-start-line="133" selection-start-column="43" selection-end-line="133" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="42" column="93" selection-start-line="42" selection-start-column="93" selection-end-line="42" selection-end-column="93" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -64,14 +76,15 @@
         <option value="$PROJECT_DIR$/Metadata.py" />
         <option value="$PROJECT_DIR$/Data.py" />
         <option value="$PROJECT_DIR$/NonParametrized.py" />
+        <option value="$PROJECT_DIR$/dlsfunctions.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="640" />
-    <option name="y" value="23" />
-    <option name="width" value="640" />
-    <option name="height" value="728" />
+    <option name="x" value="28" />
+    <option name="y" value="403" />
+    <option name="width" value="999" />
+    <option name="height" value="426" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -151,10 +164,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="23" width="640" height="728" extended-state="0" />
+    <frame x="28" y="403" width="999" height="426" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984227" visible="true" weight="0.048465267" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984227" visible="true" weight="0.24744377" />
       <window_info id="Structure" order="1" sideWeight="0.50157726" side_tool="true" weight="0.029761905" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -200,8 +213,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NonParametrized.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
+        <state relative-caret-position="249">
           <caret line="133" column="43" selection-start-line="133" selection-start-column="43" selection-end-line="133" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="93" selection-start-line="42" selection-start-column="93" selection-end-line="42" selection-end-column="93" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
