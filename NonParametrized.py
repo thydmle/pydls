@@ -21,25 +21,18 @@ class NonParametrized(object):
         self.nsteps = nsteps
 
     @staticmethod
-    def g2(f, d, y, stuff, time):
-        m, c, delta_d, eta, n, theta, k_b, temp, lambda_0, beta = stuff
-        g2 = np.ones(len(d))
-        currentsum = 0
+    def g2(f, d, y, beta, gamma, time):
 
-        # assuming fixed radius uncertainty
-        for j in range(len(time)):
+        delta_d = d[1] - d[0]
+        g2 = np.zeros(len(time))
 
-            for i in range(len(d)):
-                currentradius = d[i]
-                currentweight = f[i]
-                gamma = (16 * np.pi * (n ** 2) * np.sin(theta / 2) * k_b * temp) / (3 * eta * lambda_0 ** 2)
-                exponential = np.exp(-(gamma * time[j]) / currentradius)
-
-                sumready = currentweight * c * exponential * delta_d
-                currentsum = currentsum + sumready
-
-            g2[j] = currentsum
-            currentsum = 0
+        for i in range(len(time)):
+            exponential = np.exp(-(gamma*time[i])/d)
+            # keep in mind that there is a Mie fraction C in sumready
+            # assumed to be 1 during development
+            sumready = f*exponential*delta_d
+            currentsum = np.sum(sumready)**2
+            g2[i] = beta*currentsum
 
         return g2
 
@@ -115,12 +108,12 @@ class NonParametrized(object):
     # TODO: fix
     # DONE - Thy 6/17/19 3:49pm
     @staticmethod
-    def normalize(f, mie_fraction):
+    def normalize(f, mie_fraction, delta_d):
         # this function normalizes the integral of g(1) before the inference stage
         # returns the normalization constant that sticks to the front of the g(1) integral
 
         g1_integrand = f*mie_fraction
-        integral = scipy.integrate.trapz(g1_integrand)
+        integral = scipy.integrate.trapz(g1_integrand, dx=delta_d)
 
         normalizationconstant = 1 / integral
 
@@ -128,16 +121,19 @@ class NonParametrized(object):
 
     ####################################################################################
 
-    def log_posterior(self, f, y, stuff, time):
-        return self.log_prior(f) + self.log_likelihood(f, self.d, y, stuff, time)
+    def log_posterior(self, f, y, gamma, time):
+        return self.log_prior(f) + self.log_likelihood(f, self.d, y, gamma, time)
 
     ################################################################################
 
-    def infer(self, g2_data, d, stuff, time):
+    def infer(self, g2_data, beta, gamma, time):
+
+        # prelim_pos has to be a particle size distribution that is somewhat
+        # relevant to the size distribution being inferred
         prelim_pos = np.zeros(self.ndim)
         start_pos = [prelim_pos + 1e-4*np.random.randn(self.ndim) for i in range(self.nwalkers)]
 
-        self.sampler = emcee.EnsembleSampler(self.nwalkers, self.ndim, self.log_posterior, args=(g2_data, self.d, stuff, time))
+        self.sampler = emcee.EnsembleSampler(self.nwalkers, self.ndim, self.log_posterior, args=(self.d, g2_data, beta, gamma, time))
         self.sampler.run_mcmc(start_pos, self.nsteps)
 
     ####################################
