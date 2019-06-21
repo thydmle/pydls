@@ -25,7 +25,7 @@ def check_distribution_norm(f, delta_d):
 
 # function generates a normalized distribution
 def generate_distribution(d, mean, sigma, mie_fract):
-    f = (1/(sigma*np.sqrt(2*np.pi)))*np.exp*(-0.5*((d-mean)/sigma)**2)
+    f = (1/(sigma*np.sqrt(2*np.pi)))*np.exp(-0.5*((d-mean)/sigma)**2)
     normconst = normalize(f, mie_fract, d[1]-d[0])
     f = normconst * f
     return f
@@ -49,10 +49,11 @@ def single_exponential_fit(t, C, const, B):
 # that will need to be included once the Mie fraction's calculations are computed
 def g2(f, d, beta, gamma, time):
 
+    size = len(time)
     g2 = np.zeros(len(time))
     delta_d = d[1] - d[0]
 
-    for i in len(time):
+    for i in range(size):
         expo = np.exp(-(gamma*time[i])/d)
         sum_squared = (np.sum(f*expo*delta_d))**2
         g2[i] = beta*sum_squared
@@ -63,4 +64,42 @@ def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
     q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)
     D = C/(q**2) / 0.001
     return (k_b*t)/(6*np.pi*eta*D)
+
+
+def numerical_deriv(f, degree):
+    for i in range(degree):
+        result = np.gradient(f)
+        f = result
+    return result
+
+
+def log_prior(f):
+    f_2nd_deriv = numerical_deriv(f, 2)
+    a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
+    found_zero = False
+    for i in range(len(f)):
+        if f[i] < 0:
+            found_zero = True
+    if found_zero:
+        return -np.inf
+    else:
+        return -a
+
+
+def log_likelihood(f, d, y, gamma, m, time):
+    g2_result = g2(f, d, 1, gamma, time)
+    # keep in mind that g2 will require beta factor in the future
+
+    residuals = (y - g2_result)**2
+    chi_square = np.sum(residuals)
+
+    return -(m/2)*chi_square
+
+
+def log_posterior(f, d, y, gamma, m, time):
+    return log_prior(f) + log_likelihood(f, d, y, gamma, m, time)
+
+
+
+
 
