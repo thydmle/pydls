@@ -58,3 +58,9 @@ def g2(f, d, beta, gamma, time):
         g2[i] = beta*sum_squared
     return g2
 
+
+def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
+    q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)
+    D = C/(q**2) / 0.001
+    return (k_b*t)/(6*np.pi*eta*D)
+
