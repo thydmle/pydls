@@ -194,4 +194,32 @@ When the log of the posterior is taken, the above equation becomes:
 \ln(p) = -\mathbf{f}^T\mathbf{L_2}^T \mathbf{L_2}\mathbf{f} + \left(-\frac{M_r}{2} \right) \ln \left(\sum {\left( \tilde{g}^{(2)}_{\theta_r} (\tau_j) - g^{(2)}_{\theta_r} (\tau_j) \right)}^2 \right)
 \end{equation}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Actual Testing 
+% with 2015_07_22_Eonly0005 asc data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Testing Round 1 - 06/24/2019}
+The current code on github was used to infer the discretized particle size distribution of the data gathered in a data file which was collected by Professor Jerome Fung. 
+
+The emcee algorithm requires that starting positions be given for the walkers such that the walkers would be closest to the most probable values that are about to be inferred. In previous methods, such as Bayesian inference with the method of cumulants, the most probably values can be estimated using least square fitting. Therefore, in this testing round, the same procedure for finding the most probable values for the walkers' starting positions is used. The starting position is first extracted from the raw data using least square fitting to find the most likely particle radius size. Then, since we already know that this particular data came from a sample that has unimodal size distribution, a Gaussian distribution is generated with a mean being the most likely particle radius size. The distribution is also normalized prior to Bayesian inference. 
+
+The most probable particle radius size was found to be 2.2439$\times10^{-9}$\si{meter}. From this most probably size, a Gaussian particle size distribution was generated to be Fig.~\ref{fig:f}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{theory_f(D)_06242019.png}
+\caption{The theoretical particle size distribution that was generated from the least-square fitting of the raw data has a mean of 4.4878$\times10^{-9}$\si{meter} and a standard deviation of 5$\times10^{-10}$\si{meter}.}
+\label{fig:f}
+\end{figure}
+
+With this particle size distribution as the starting position, the actual particle distribution was inferred using the Bayesian method to be as described in Fig.~\ref{fig:actual_distribution1}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{f(D)_06242019.png}
+\caption{The inferred particle size distribution that was generated using Bayesian inference on the raw data file aforementioned, using the generated particle size distribution in Fig.~\ref{fig:f} as starting positions.}
+\label{fig:actual_distribution1}
+\end{figure}
+
 \end{document}

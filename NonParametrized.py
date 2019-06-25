@@ -9,7 +9,7 @@ import dlsfunctions as dls
 
 # 06/21/2019: I'm not sure if I want to pursue an object oriented approach to this problem anymore because
 # it seems that packing all necessary function calls into a package that can be imported is all that is
-# required. 
+# required.
 
 class NonParametrized(object):
 
