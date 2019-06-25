@@ -32,7 +32,7 @@ def generate_distribution(d, mean, sigma, mie_fract):
 
 
 # function calculates the gamma factor of a dls experiment
-def calc_gamma(m, c, eta, n, theta, k_b, t, lambda_0, beta):
+def calc_gamma(m, c, eta, n, theta, k_b, t, lambda_0):
     return (16*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
 
 
@@ -47,12 +47,23 @@ def single_exponential_fit(t, C, const, B):
 
 # TODO: this function also depends on the Mie fraction in the exponential term
 # that will need to be included once the Mie fraction's calculations are computed
-def g2(f, d, beta, gamma, time):
+#def g2(f, d, beta, gamma, time):
 
+#    size = len(time)
+#    g2 = np.zeros(size)
+#    delta_d = d[1] - d[0]
+#
+#    for i in range(size):
+#        expo = np.exp(-(gamma*time[i])/d)
+#        sum_squared = (np.sum(f*expo*delta_d))**2
+#        g2[i] = beta*sum_squared
+#    return g2
+
+def g2(theta, d, gamma, time):
+    f, beta = theta
     size = len(time)
     g2 = np.zeros(len(time))
     delta_d = d[1] - d[0]
-
     for i in range(size):
         expo = np.exp(-(gamma*time[i])/d)
         sum_squared = (np.sum(f*expo*delta_d))**2
@@ -87,7 +98,7 @@ def log_prior(f):
 
 
 def log_likelihood(f, d, y, gamma, m, time):
-    g2_result = g2(f, d, 1, gamma, time)
+    g2_result = g2(f, d, gamma, time)
     # keep in mind that g2 will require beta factor in the future
 
     residuals = (y - g2_result)**2
