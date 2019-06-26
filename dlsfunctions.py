@@ -93,8 +93,10 @@ def log_prior(theta, m):
     found_zero = False
     for i in range(len(f)):
         if f[i] < 0:
-            found_zero = True
-    if found_zero or beta <= 0:
+            not_ok = True
+    if beta <= 0 or beta > 2:
+        not_ok = True
+    if not_ok:
         return -np.inf
     else:
         return -a

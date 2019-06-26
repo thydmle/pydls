@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Bayes Take 3 06252019-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayes Take 3 06252019-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bayes Take 3 06252019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 3 06252019.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bayes Take 3 Error Debug.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 3 Error Debug.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 4 06262019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 4 06262019.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+            <state relative-caret-position="474">
+              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -225,8 +223,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+        <state relative-caret-position="474">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
