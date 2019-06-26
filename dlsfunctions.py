@@ -86,7 +86,7 @@ def numerical_deriv(f, degree):
 
 
 def log_prior(theta, m):
-
+    beta = theta[m]
     f = theta[0:m]
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
@@ -94,7 +94,7 @@ def log_prior(theta, m):
     for i in range(len(f)):
         if f[i] < 0:
             found_zero = True
-    if found_zero:
+    if found_zero or beta <= 0:
         return -np.inf
     else:
         return -a
