@@ -59,10 +59,11 @@ def single_exponential_fit(t, C, const, B):
 #        g2[i] = beta*sum_squared
 #    return g2
 
-def g2(theta, d, gamma, time):
-    f, beta = theta
+def g2(theta, d, m, gamma, time):
+    beta = theta[m]
+    f = theta[0:m]
     size = len(time)
-    g2 = np.zeros(len(time))
+    g2 = np.zeros(size)
     delta_d = d[1] - d[0]
     for i in range(size):
         expo = np.exp(-(gamma*time[i])/d)
@@ -84,7 +85,9 @@ def numerical_deriv(f, degree):
     return result
 
 
-def log_prior(f):
+def log_prior(theta, m):
+    lastindex = m - 1
+    f = theta[0:lastindex]
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     found_zero = False
@@ -97,8 +100,8 @@ def log_prior(f):
         return -a
 
 
-def log_likelihood(f, d, y, gamma, m, time):
-    g2_result = g2(f, d, gamma, time)
+def log_likelihood(theta, d, y, gamma, m, time):
+    g2_result = g2(theta, d, m, gamma, time)
     # keep in mind that g2 will require beta factor in the future
 
     residuals = (y - g2_result)**2
@@ -107,8 +110,8 @@ def log_likelihood(f, d, y, gamma, m, time):
     return -(m/2)*chi_square
 
 
-def log_posterior(f, d, y, gamma, m, time):
-    return log_prior(f) + log_likelihood(f, d, y, gamma, m, time)
+def log_posterior(theta, d, y, gamma, m, time):
+    return log_prior(theta, m) + log_likelihood(theta, d, y, gamma, m, time)
 
 
 
