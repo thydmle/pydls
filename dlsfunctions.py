@@ -86,8 +86,8 @@ def numerical_deriv(f, degree):
 
 
 def log_prior(theta, m):
-    lastindex = m - 1
-    f = theta[0:lastindex]
+
+    f = theta[0:m]
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     found_zero = False
@@ -100,7 +100,7 @@ def log_prior(theta, m):
         return -a
 
 
-def log_likelihood(theta, d, y, gamma, m, time):
+def log_likelihood(theta, d, y, m, gamma, time):
     g2_result = g2(theta, d, m, gamma, time)
     # keep in mind that g2 will require beta factor in the future
 
@@ -110,8 +110,11 @@ def log_likelihood(theta, d, y, gamma, m, time):
     return -(m/2)*chi_square
 
 
-def log_posterior(theta, d, y, gamma, m, time):
-    return log_prior(theta, m) + log_likelihood(theta, d, y, gamma, m, time)
+def log_posterior(theta, d, y, m, gamma, time):
+    # theta will be an array of size (m+1, )
+    # log_prior and log_likelihood will need to slice theta correctly
+
+    return log_prior(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
 
 
 
