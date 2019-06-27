@@ -40,7 +40,6 @@ def calc_gamma(m, c, eta, n, theta, k_b, t, lambda_0):
 # useful for when you have a dls data set and you're trying to
 # find a decent starting position for the walkers in Bayesian analysis
 # use this fit to find the most probable radius size
-# then generate a diameter size distribution with the mean at the most probable diameter size
 def single_exponential_fit(t, C, const, B):
     return const*np.exp(-C*t) + B
 
