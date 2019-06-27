@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled1-checkpoint.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Bayes Take 4 06262019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 4 06262019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Untitled1.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+            <state relative-caret-position="215">
+              <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -84,7 +89,7 @@
     <option name="x" value="652" />
     <option name="y" value="23" />
     <option name="width" value="628" />
-    <option name="height" value="729" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,11 +169,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="652" y="23" width="628" height="729" extended-state="0" />
+    <frame x="652" y="23" width="628" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.63893247" visible="true" weight="0.30642503" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.3610675" side_tool="true" visible="true" weight="0.30642503" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6399371" visible="true" weight="0.30642503" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.3600629" side_tool="true" visible="true" weight="0.30642503" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -223,8 +228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+        <state relative-caret-position="215">
+          <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

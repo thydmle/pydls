@@ -90,7 +90,7 @@ def log_prior(theta, m):
     f = theta[0:m]
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
-    found_zero = False
+    not_ok = False
     for i in range(len(f)):
         if f[i] < 0:
             not_ok = True
