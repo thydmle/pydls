@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="">
+    <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 10 07012019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 10 07012019.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="39" column="57" lean-forward="true" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+            <state relative-caret-position="185">
+              <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -81,8 +81,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="901" />
-    <option name="y" value="93" />
+    <option name="x" value="563" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="726" />
   </component>
@@ -160,15 +160,28 @@
       <option name="project" value="LOCAL" />
       <updated>1560967045560</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updates on bayes take 9 and bayes take 7">
+      <created>1562008088461</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562008088462</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Uncommenting the normalization step">
+      <created>1562008156625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562008156625</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="563" y="23" width="1280" height="726" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42465752" visible="true" weight="0.3621922" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5753425" side_tool="true" visible="true" weight="0.3621922" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42384106" visible="true" weight="0.3621922" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.57615894" side_tool="true" visible="true" weight="0.3621922" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -177,7 +190,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.04731861" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32861635" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -191,7 +204,9 @@
     <MESSAGE value="Imported scipy&#10;Made g2, numerical_deriv, normalize static functions" />
     <MESSAGE value="Defined two new properties for object&#10;What to do with likelihood?&#10;Added posterior definition&#10;Added infer function&#10;Not sure about how to automate the sampler's plotting" />
     <MESSAGE value="Put in new properties for the object (self.nwalkers, self.nsteps)&#10;Fixed the implementation of the likelihood function to match the newly defined likelihood based on the posterior expression&#10;Put in loop in infer() to finally yield the correct form of the starting positions&#10;Redacted code for walker_plot because np.array doesn't take Axes objects. Will need to figure out another way to group the figures together and automate the process" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put in new properties for the object (self.nwalkers, self.nsteps)&#10;Fixed the implementation of the likelihood function to match the newly defined likelihood based on the posterior expression&#10;Put in loop in infer() to finally yield the correct form of the starting positions&#10;Redacted code for walker_plot because np.array doesn't take Axes objects. Will need to figure out another way to group the figures together and automate the process" />
+    <MESSAGE value="Updates on bayes take 9 and bayes take 7" />
+    <MESSAGE value="Uncommenting the normalization step" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uncommenting the normalization step" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/NonParametrized.py">
@@ -223,8 +238,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="39" column="57" lean-forward="true" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+        <state relative-caret-position="185">
+          <caret line="75" column="4" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
