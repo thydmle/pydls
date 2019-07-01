@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bayes Take 10 07012019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 10 07012019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug python 2 and 3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug python 2 and 3.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,8 +179,8 @@
   <component name="ToolWindowManager">
     <frame x="563" y="23" width="1280" height="726" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42384106" visible="true" weight="0.3621922" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.57615894" side_tool="true" visible="true" weight="0.3621922" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.42384106" visible="true" weight="0.3621922" />
+      <window_info id="Structure" order="1" sideWeight="0.57615894" side_tool="true" visible="true" weight="0.3621922" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
