@@ -64,7 +64,7 @@ def g2(theta, d, m, gamma, time):
     size = len(time)
     g2 = np.zeros(size)
     delta_d = d[1] - d[0]
-    #f = f*normalize(f, 1, delta_d)
+    f = f*normalize(f, 1, delta_d)
     for i in range(size):
         expo = np.exp(-(gamma*time[i])/d)
         
