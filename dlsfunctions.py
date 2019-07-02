@@ -80,7 +80,7 @@ def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
 
 
 def numerical_deriv(f, degree):
-    result = 0
+#    result = 0
     for i in range(degree):
         result = np.gradient(f)
         f = result
@@ -161,10 +161,15 @@ def chain(sampler, step_to_chain_at, ndim):
     return sampler.chain[:, step_to_chain_at:,:]
 
 
-def display_dataframe(chained_sampler, param_num):
+def create_dataframe(chained_sampler, param_num):
     traces = chained_sampler.reshape(-1, param_num).T
-    samples_df = pd.DataFrame(traces[0])
+    samples_dictionary = {}
+    for i in range(param_num-1):
+        samples_dictionary["f"+str(i)] = traces[0]
+    samples_df = pd.DataFrame(samples_dictionary)
+    return samples_df
 
+    
 
 
 
