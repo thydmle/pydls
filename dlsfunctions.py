@@ -120,6 +120,47 @@ def log_posterior(theta, d, y, m, gamma, time):
     return log_prior(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
 
 
+def create_start_pos(theta, ndim, nwalkers):
+    start_pos = [theta + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
+    return start_pos
+
+
+def create_sampler(nwalkers, ndim, d, y, m, gamma, time):
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, log_posterior, args=(d, y, m, gamma, time))
+    return sampler
+
+
+def infer(sampler, start_pos, nsteps):
+    return sampler.run_mcmc(start_pos, nsteps)
+
+
+def view_burnin_plot(sampler, first_param, second_param):
+    plt.style.use('seaborn-deep')
+    plt.rcParams['mathtext.fontset'] = 'stix'
+    plt.rcParams['font.family'] = 'STIXGeneral'
+    params = {'legend.fontsize': 'x-large',
+              'figure.figsize': (15, 5),
+              'axes.labelsize': 'x-large',
+              'axes.titlesize': 'x-large',
+              'xtick.labelsize': 'x-large',
+              'ytick.labelsize': 'x-large'}
+
+    fig, (ax0, ax1) = plt.subplots(2)
+    ax0.set(ylabel='f(d' + str(first_param) + ')')
+    ax1.set(ylabel='f(d' + str(second_param) + ')')
+
+    for j in range(10):
+        sns.tsplot(sampler.chain[j, :, first_param], ax=ax0)
+        sns.tsplot(sampler.chain[j, :, second_param], ax=ax1)
+    # plots 2 inferred parameters at a time
+
+
+def chain(sampler, step_to_chain_at, ndim):
+    return sampler.chain[:, step_to_chain_at:,:]
+
+
+
+
 
 
 
