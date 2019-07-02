@@ -80,6 +80,7 @@ def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
 
 
 def numerical_deriv(f, degree):
+    result = 0
     for i in range(degree):
         result = np.gradient(f)
         f = result
@@ -131,7 +132,8 @@ def create_sampler(nwalkers, ndim, d, y, m, gamma, time):
 
 
 def infer(sampler, start_pos, nsteps):
-    return sampler.run_mcmc(start_pos, nsteps)
+    result = sampler.run_mcmc(start_pos, nsteps)
+    return result
 
 
 def view_burnin_plot(sampler, first_param, second_param):
@@ -159,6 +161,9 @@ def chain(sampler, step_to_chain_at, ndim):
     return sampler.chain[:, step_to_chain_at:,:]
 
 
+def display_dataframe(chained_sampler, param_num):
+    traces = chained_sampler.reshape(-1, param_num).T
+    samples_df = pd.DataFrame(traces[0])
 
 
 
