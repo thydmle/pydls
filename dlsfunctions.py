@@ -122,7 +122,7 @@ def log_posterior(theta, d, y, m, gamma, time):
 
 
 def create_start_pos(theta, ndim, nwalkers):
-    start_pos = [theta + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
+    start_pos = [theta + np.absoluate(1e-4*np.random.randn(ndim)) for i in range(nwalkers)]
     return start_pos
 
 

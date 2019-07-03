@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
-      <change beforePath="$PROJECT_DIR$/Bayes Take 16 07032019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 16 07032019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +15,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1468">
+            <state relative-caret-position="693">
               <caret line="165" column="27" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -147,8 +147,8 @@
     <frame x="640" y="23" width="640" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42218542" visible="true" weight="0.20516963" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5778146" side_tool="true" visible="true" weight="0.20516963" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42218542" visible="true" weight="0.40872374" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5778146" side_tool="true" visible="true" weight="0.40872374" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -205,7 +205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1468">
+        <state relative-caret-position="693">
           <caret line="165" column="27" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
