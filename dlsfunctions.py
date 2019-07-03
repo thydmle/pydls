@@ -165,7 +165,7 @@ def create_dataframe(chained_sampler, param_num):
     traces = chained_sampler.reshape(-1, param_num).T
     samples_dictionary = {}
     for i in range(param_num-1):
-        samples_dictionary["f"+str(i)] = traces[0]
+        samples_dictionary["f"+str(i)] = traces[i]
     samples_df = pd.DataFrame(samples_dictionary)
     return samples_df
 
