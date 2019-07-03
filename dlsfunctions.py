@@ -80,6 +80,7 @@ def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
 
 
 def numerical_deriv(f, degree):
+    result = np.zeros(len(f))
     for i in range(degree):
         result = np.gradient(f)
         f = result
