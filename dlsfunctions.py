@@ -58,19 +58,20 @@ def single_exponential_fit(t, C, const, B):
 #        g2[i] = beta*sum_squared
 #    return g2
 
-def g2(theta, d, m, gamma, time):
+def g2(theta, d, gamma, time):
+    m = len(d)
     beta = theta[m]
     f = theta[0:m]
     size = len(time)
-    g2 = np.zeros(size)
+    y = np.zeros(size)
     delta_d = d[1] - d[0]
     f = f*normalize(f, 1, delta_d)
     for i in range(size):
         expo = np.exp(-(gamma*time[i])/d)
         
         sum_squared = (np.sum(f*expo*delta_d))**2
-        g2[i] = beta*sum_squared
-    return g2
+        y[i] = beta*sum_squared
+    return y
 
 
 def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
@@ -103,11 +104,13 @@ def log_prior(theta, m):
     else:
         return -a
 
-# TODO: don't need m if you have d
-def log_likelihood(theta, d, y, m, gamma, time):
-    g2_result = g2(theta, d, m, gamma, time)
-    # keep in mind that g2 will require beta factor in the future
 
+# TODO: don't need m if you have d
+#DONE
+def log_likelihood(theta, d, y, gamma, time):
+    g2_result = g2(theta, d, gamma, time)
+    # keep in mind that g2 will require beta factor in the future
+    m = len(d)
     residuals = (y - g2_result)**2
     chi_square = np.sum(residuals)
 
@@ -118,7 +121,7 @@ def log_posterior(theta, d, y, m, gamma, time):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
 
-    return log_prior(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
+    return log_prior(theta, m) + log_likelihood(theta, d, y, gamma, time)
 
 
 def create_start_pos(theta, ndim, nwalkers):
