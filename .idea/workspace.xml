@@ -2,7 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
+      <change beforePath="$PROJECT_DIR$/2015_07_22_Eonly0005_MILLISECONDS.ASC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Exhaustion Test 07022019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 10 07012019-Copy1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 10 07012019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 11 07022019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 12 07022019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 12 Part 2.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 13 07022019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 14 07032019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 15 07032019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 16 07032019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 2 06212019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 3 06252019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 3 Error Debug.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 4 06262019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 5 06262019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 5 06272019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 6 06272019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 7 06282019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 9 07012019.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bayes Take 9 DEBUG.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug python 2 and 3.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NonParametrized.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/actual_distribution_bayestake6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/actual_distribution_simulated_06272019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bayestake12pt2_inferred_distribution.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bayestake12pt2_residuals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d0_d1_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d10_d11_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d12_d13_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d14_d15_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d16_d17_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d18_d19_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d2_d3_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d4_d5_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d6_d7_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d8_d9_06242019.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/f(D)_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/g2_from_inference_bayestake5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/g2_from_inferred_distribution_bayestake4_06272019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/g2_inferred_bayestake6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/g2_with29thbeta_inferred_bayestake6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_distribution_bayestake6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_distribution_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_distribution_bayestake9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_distribution_simulated_06272019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_g2_16thbeta_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_g2_50thbeta_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_g2_84thbeta_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inferred_g2_bayestake9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/noisy_inferred_distribution_bayestake5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pairplot_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_16thbeta_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_50thbeta_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_84thbeta_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_bayestake4_06272019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_bayestake5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_bayestake6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/residuals_with29thbeta_bayestake6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulated_distribution_bayestake5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulated_distribution_bayestake7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/theory_f(D)_06242019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/third_pairplot_bayestake4_06262019.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,20 +79,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+            <state relative-caret-position="247">
+              <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
             </state>
           </provider>
         </entry>
@@ -229,8 +284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+        <state relative-caret-position="247">
+          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

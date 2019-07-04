@@ -32,9 +32,8 @@ def generate_distribution(d, mean, sigma, mie_fract):
 
 
 # function calculates the gamma factor of a dls experiment
-# TODO: check syntax
-def calc_gamma(m, c, eta, n, theta, k_b, t, lambda_0):
-    return (16*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
+def calc_gamma(eta, n, theta, k_b, t, lambda_0):
+    return (16*(n**2)*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
 
 
 # function for single exponential fit
