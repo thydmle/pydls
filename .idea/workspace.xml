@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Bayes Take 16 07032019-Copy1-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Bayes Take 16 07032019-Copy1-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +18,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="165" column="27" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
+            <state relative-caret-position="242">
+              <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="0" />
             </state>
           </provider>
         </entry>
@@ -47,9 +59,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="640" />
+    <option name="x" value="589" />
     <option name="y" value="23" />
-    <option name="width" value="640" />
+    <option name="width" value="1249" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -58,6 +70,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -69,7 +82,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,15 +152,22 @@
       <option name="project" value="LOCAL" />
       <updated>1562008156625</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updated create_start_pos">
+      <created>1562180865148</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562180865148</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="23" width="640" height="726" extended-state="0" />
+    <frame x="589" y="23" width="1249" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42218542" visible="true" weight="0.40872374" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5778146" side_tool="true" visible="true" weight="0.40872374" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4205298" visible="true" weight="0.11400651" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5794702" side_tool="true" visible="true" weight="0.11400651" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -173,7 +192,8 @@
     <MESSAGE value="Put in new properties for the object (self.nwalkers, self.nsteps)&#10;Fixed the implementation of the likelihood function to match the newly defined likelihood based on the posterior expression&#10;Put in loop in infer() to finally yield the correct form of the starting positions&#10;Redacted code for walker_plot because np.array doesn't take Axes objects. Will need to figure out another way to group the figures together and automate the process" />
     <MESSAGE value="Updates on bayes take 9 and bayes take 7" />
     <MESSAGE value="Uncommenting the normalization step" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uncommenting the normalization step" />
+    <MESSAGE value="Updated create_start_pos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated create_start_pos" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/NonParametrized.py">
@@ -203,10 +223,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="165" column="27" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
+        <state relative-caret-position="242">
+          <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

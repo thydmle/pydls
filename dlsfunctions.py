@@ -32,6 +32,7 @@ def generate_distribution(d, mean, sigma, mie_fract):
 
 
 # function calculates the gamma factor of a dls experiment
+# TODO: check syntax
 def calc_gamma(m, c, eta, n, theta, k_b, t, lambda_0):
     return (16*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
 
@@ -103,7 +104,7 @@ def log_prior(theta, m):
     else:
         return -a
 
-
+# TODO: don't need m if you have d
 def log_likelihood(theta, d, y, m, gamma, time):
     g2_result = g2(theta, d, m, gamma, time)
     # keep in mind that g2 will require beta factor in the future
