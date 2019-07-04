@@ -170,6 +170,14 @@ def create_dataframe(chained_sampler, param_num):
     samples_df = pd.DataFrame(samples_dictionary)
     return samples_df
 
+
+def get_infer_f(quantiled_samples, m):
+    result = quantiled_samples.quantile([0.5], axis=0)
+    result = result.values.flatten()
+    return result[0:m]
+
+
+
     
 
 
