@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
-      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 12 Part 2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 12 Part 2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 13 07022019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 13 07022019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/Bayes Take 17 07042019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 17 07042019.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dlsfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 5 06272019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 5 06272019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dlsfunctions.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +16,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
+        <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="132" column="80" selection-start-line="132" selection-start-column="80" selection-end-line="132" selection-end-column="80" />
+            <state>
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -50,8 +49,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="470" />
-    <option name="y" value="36" />
+    <option name="x" value="73" />
+    <option name="y" value="23" />
     <option name="width" value="1249" />
     <option name="height" value="726" />
   </component>
@@ -68,6 +67,11 @@
             <path>
               <item name="pydls" type="b2602c69:ProjectViewProjectNode" />
               <item name="pydls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pydls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pydls" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -154,11 +158,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="470" y="36" width="1249" height="726" extended-state="0" />
+    <frame x="73" y="23" width="1249" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4205298" visible="true" weight="0.24592833" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5794702" side_tool="true" visible="true" weight="0.24592833" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4205298" visible="true" weight="0.29560262" />
+      <window_info id="Structure" order="1" sideWeight="0.5794702" side_tool="true" visible="true" weight="0.29560262" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -223,8 +227,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="80" selection-start-line="132" selection-start-column="80" selection-end-line="132" selection-end-column="80" />
+        <state relative-caret-position="-446">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
