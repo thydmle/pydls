@@ -32,8 +32,9 @@ def generate_distribution(d, mean, sigma, mie_fract):
 
 
 # function calculates the gamma factor of a dls experiment
-def calc_gamma(eta, n, theta, k_b, t, lambda_0):
-    return (16*(n**2)*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
+def calc_gamma(eta, n, angle, k_b, t, lambda_0):
+    # return (16*(n**2)*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
+    return (16*np.pi*(n**2)*((np.sin(angle/2))**2)*k_b*t) / (3*(lambda_0**2)*eta)
 
 
 # function for single exponential fit
@@ -58,8 +59,7 @@ def single_exponential_fit(t, C, const, B):
 #        g2[i] = beta*sum_squared
 #    return g2
 
-def g2(theta, d, gamma, time):
-    m = len(d)
+def g2(theta, d, m, gamma, time):
     beta = theta[m]
     f = theta[0:m]
     size = len(time)
@@ -68,7 +68,6 @@ def g2(theta, d, gamma, time):
     f = f*normalize(f, 1, delta_d)
     for i in range(size):
         expo = np.exp(-(gamma*time[i])/d)
-        
         sum_squared = (np.sum(f*expo*delta_d))**2
         y[i] = beta*sum_squared
     return y
@@ -94,7 +93,7 @@ def log_prior(theta, m):
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     not_ok = False
-    for i in range(len(f)):
+    for i in range(m):
         if f[i] < 0:
             not_ok = True
     if beta <= 0 or beta > 2:
@@ -107,13 +106,11 @@ def log_prior(theta, m):
 
 # TODO: don't need m if you have d
 #DONE
-def log_likelihood(theta, d, y, gamma, time):
-    g2_result = g2(theta, d, gamma, time)
+def log_likelihood(theta, d, y, m, gamma, time):
+    g2_result = g2(theta, d, m, gamma, time)
     # keep in mind that g2 will require beta factor in the future
-    m = len(d)
     residuals = (y - g2_result)**2
     chi_square = np.sum(residuals)
-
     return -(m/2)*chi_square
 
 
@@ -121,11 +118,11 @@ def log_posterior(theta, d, y, m, gamma, time):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
 
-    return log_prior(theta, m) + log_likelihood(theta, d, y, gamma, time)
+    return log_prior(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
 
 
 def create_start_pos(theta, ndim, nwalkers):
-    start_pos = [theta + np.absolute(1e-4*np.random.randn(ndim)) for i in range(nwalkers)]
+    start_pos = [theta + 1e-4*np.absolute(np.random.randn(ndim)) for i in range(nwalkers)]
     return start_pos
 
 
@@ -174,9 +171,9 @@ def create_dataframe(chained_sampler, param_num):
 
 
 def get_infer_f(quantiled_samples, m):
-    result = quantiled_samples.quantile([0.5], axis=0)
-    result = result.values.flatten()
-    return result[0:m]
+    from_df = quantiled_samples.quantile([0.5], axis=0)
+    result = from_df.values
+    return result[0]
 
 
 
