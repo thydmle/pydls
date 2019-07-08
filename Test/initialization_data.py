@@ -11,7 +11,7 @@ t = 298.15
 lambda_0 = 638e-9
 beta = 1
 start = 5e-10
-stop = 9e-9
+stop = 1e-8
 r = 2.2439608235145855e-09
 sigma = 2e-10
 
@@ -41,8 +41,18 @@ def get_right_mean():
 
 
 def get_narrow_sigma():
+    return sigma/3
+
+
+def get_normal_sigma():
     return sigma
 
 
 def get_wide_sigma():
-    return sigma*2
+    return sigma*3
+
+
+def get_real_wide_sigma():
+    return sigma*6
+
+

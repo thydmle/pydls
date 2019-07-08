@@ -176,9 +176,8 @@ def get_infer_f(quantiled_samples, m):
     return result[0]
 
 
-
-    
-
-
-
-
+def get_beta(chained_sampler, ndim):
+    traces = chained_sampler.reshape(-1, ndim).T
+    beta = {'beta': traces[ndim-1]}
+    beta_df = pd.DataFrame(beta)
+    return beta_df
