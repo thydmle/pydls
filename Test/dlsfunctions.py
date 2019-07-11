@@ -96,12 +96,25 @@ def log_prior(theta, m):
     for i in range(m):
         if f[i] < 0:
             not_ok = True
+ #   if beta <= 0 or beta > 2:
+ #      not_ok = True
+    if not_ok:
+        return -np.inf
+    else:
+        return -a
+
+
+def log_prior_beta(theta, m):
+    beta = theta[m]
+    not_ok = False
+    sigma = 1e-1
+    beta_0 = 1
     if beta <= 0 or beta > 2:
         not_ok = True
     if not_ok:
         return -np.inf
     else:
-        return -a
+        return -((beta-beta_0)**2)/(2*sigma**2)
 
 
 # TODO: don't need m if you have d
@@ -118,7 +131,7 @@ def log_posterior(theta, d, y, m, gamma, time):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
 
-    return log_prior(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
+    return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
 
 
 def create_start_pos(theta, ndim, nwalkers):
