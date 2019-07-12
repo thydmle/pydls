@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 22 07082019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 22 07082019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 26 07092019-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 26 07092019-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/dlsfunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/initialization_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/initialization_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-188">
-              <caret line="123" column="4" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+            <state relative-caret-position="379">
+              <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -26,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/initialization_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+            <state relative-caret-position="225">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -58,15 +59,15 @@
         <option value="$PROJECT_DIR$/NonParametrized.py" />
         <option value="$PROJECT_DIR$/dlsfunctions.py" />
         <option value="$PROJECT_DIR$/Test/metadata_test.py" />
-        <option value="$PROJECT_DIR$/Test/dlsfunctions.py" />
         <option value="$PROJECT_DIR$/Test/initialization_data.py" />
+        <option value="$PROJECT_DIR$/Test/dlsfunctions.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="507" />
-    <option name="y" value="25" />
-    <option name="width" value="1237" />
+    <option name="x" value="273" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,6 +76,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -91,7 +93,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -173,11 +174,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="507" y="25" width="1237" height="726" extended-state="0" />
+    <frame x="273" y="23" width="1280" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.41721854" visible="true" weight="0.25411186" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.58278143" side_tool="true" visible="true" weight="0.25411186" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4139073" visible="true" weight="0.24543288" />
+      <window_info id="Structure" order="1" sideWeight="0.5860927" side_tool="true" visible="true" weight="0.24543288" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -238,8 +239,8 @@
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py" />
     <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="123" column="4" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+        <state relative-caret-position="379">
+          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -248,8 +249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/initialization_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        <state relative-caret-position="225">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

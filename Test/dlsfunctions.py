@@ -31,7 +31,30 @@ def generate_distribution(d, mean, sigma, mie_fract):
     return f
 
 
-# function calculates the gamma factor of a dls experiment
+def generate_bimodal_distribution(d, mean1, sigma1, mean2, sigma2, mie_fract):
+    f1 = 1 / (sigma1 * np.sqrt(2 * np.pi ** 2)) * np.exp(-(d - mean1) ** 2 / (2 * sigma1 ** 2))
+    f1 = f1 * normalize(f1, 1, d[1] - d[0])
+
+    f2 = 1 / (sigma2 * np.sqrt(2 * np.pi ** 2)) * np.exp(-(d - mean2) ** 2 / (2 * sigma2 ** 2))
+    f2 = f2 * normalize(f2, 1, d[1] - d[0])
+
+    f = f1 + f2
+    f = f * normalize(f, 1, d[1] - d[0])
+    return f
+
+
+def generate_unequal_bimodal_distribution(d, mean1, sigma1, mean2, sigma2, mie_fract):
+    f1 = 1 / (sigma1 * np.sqrt(2 * np.pi ** 2)) * np.exp(-(d - mean1) ** 2 / (2 * sigma1 ** 2))
+    f1 = f1 * normalize(f1, 1, d[1] - d[0])
+
+    f2 = 1 / (sigma2 * np.sqrt(2 * np.pi ** 2)) * np.exp(-(d - mean2) ** 2 / (2 * sigma2 ** 2))
+    f2 = f2 * normalize(f2, 1, d[1] - d[0])
+
+    f = f1 + 2 * f2
+    f = f * normalize(f, 1, d[1] - d[0])
+    return f
+
+
 def calc_gamma(eta, n, angle, k_b, t, lambda_0):
     # return (16*(n**2)*(np.pi**2)*(np.sin(theta/2))**2*k_b*t)/(2*lambda_0**2*eta)
     return (16*np.pi*(n**2)*((np.sin(angle/2))**2)*k_b*t) / (3*(lambda_0**2)*eta)
