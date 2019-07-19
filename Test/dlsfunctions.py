@@ -207,9 +207,11 @@ def create_dataframe(chained_sampler, param_num):
 
 
 def get_infer_f(quantiled_samples, m):
-    from_df = quantiled_samples.quantile([0.5], axis=0)
-    result = from_df.values
-    return result[0]
+    array = np.zeros(m)
+    for i in range(m):
+        a = quantiled_samples.get("f"+str(i)).values
+        array[i] = a[0]
+    return array
 
 
 def get_beta(chained_sampler, ndim):
