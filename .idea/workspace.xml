@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="08d0a93b-b5fe-49f6-82c3-95c95942d029" name="Default Changelist" comment="Updates on bayes take 9 and bayes take 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 26 07092019-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 26 07092019-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/dlsfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/dlsfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Results/07112019.pages" beforeDir="false" afterPath="$PROJECT_DIR$/Test Results/07112019.pages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 23 07082019-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 23 07082019-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 29 07112019-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 29 07112019-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 30 07112019-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/.ipynb_checkpoints/Bayes Take 30 07112019-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 28 07112019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 28 07112019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 29 07112019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 29 07112019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 30 07112019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 30 07112019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 31 07112019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 31 07112019.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Bayes Take 6 06272019.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Bayes Take 6 06272019.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/initialization_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/initialization_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+            <state relative-caret-position="990">
+              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -31,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/Test/initialization_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -59,15 +66,15 @@
         <option value="$PROJECT_DIR$/NonParametrized.py" />
         <option value="$PROJECT_DIR$/dlsfunctions.py" />
         <option value="$PROJECT_DIR$/Test/metadata_test.py" />
-        <option value="$PROJECT_DIR$/Test/initialization_data.py" />
         <option value="$PROJECT_DIR$/Test/dlsfunctions.py" />
+        <option value="$PROJECT_DIR$/Test/initialization_data.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="273" />
+    <option name="x" value="640" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="width" value="640" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -174,11 +181,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="273" y="23" width="1280" height="726" extended-state="0" />
+    <frame x="640" y="23" width="640" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4139073" visible="true" weight="0.24543288" />
-      <window_info id="Structure" order="1" sideWeight="0.5860927" side_tool="true" visible="true" weight="0.24543288" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4139073" visible="true" weight="0.048465267" />
+      <window_info id="Structure" order="1" sideWeight="0.5860927" side_tool="true" visible="true" weight="0.048465267" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -237,20 +244,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Bayes Take 16 07032019-Copy1.ipynb" />
     <entry file="file://$PROJECT_DIR$/dlsfunctions.py" />
-    <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
+    <entry file="file://$PROJECT_DIR$/Test/initialization_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+        <state relative-caret-position="225">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/initialization_data.py">
+    <entry file="file://$PROJECT_DIR$/Test/dlsfunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="990">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
