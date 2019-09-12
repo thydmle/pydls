@@ -8,8 +8,6 @@ import scipy.integrate
 import pre_infer
 
 
-
-
 def g2(theta, d, gamma, time):
     m = len(d)
     beta = theta[m]
@@ -24,11 +22,6 @@ def g2(theta, d, gamma, time):
         y[i] = beta * sum_squared
     return y
 
-
-def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
-    q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)
-    D = C/(q**2) / 0.001
-    return (k_b*t)/(6*np.pi*eta*D)
 
 
 def numerical_deriv(f, degree):

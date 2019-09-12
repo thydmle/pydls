@@ -20,6 +20,11 @@ def normalize(f, mie_fraction, delta_d):
     normconst = 1/integral
     return normconst
 
+def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
+    q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)
+    D = C/(q**2) / 0.001
+    return (k_b*t)/(6*np.pi*eta*D)
+
 
 # function checks if a distribution is normalized
 # VARIABLES:
@@ -84,3 +89,4 @@ def calc_gamma(eta, n, angle, k_b, t, lambda_0):
 # use this fit to find the most probable radius size
 def single_exponential_fit(t, C, const, B):
     return const*np.exp(-C*t) + B
+
