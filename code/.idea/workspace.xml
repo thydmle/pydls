@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6154e765-95bb-4662-86e8-4b8ee742afe0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/infer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infer/rayleigh-gans.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/evaluate_dls_infer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/evaluate_post_infer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/evaluate_pre_infer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/evaluate_rayleigh_gans.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dls_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/dls_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/initialization_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/initialization_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/post_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pre_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/pre_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rayleigh-gans.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infer/rayleigh-gans.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/rayleigh_gans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/evaluate_rayleigh_gans.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/evaluate_rayleigh_gans.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,10 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/infer/rayleigh-gans.py">
+        <entry file="file://$PROJECT_DIR$/infer/rayleigh_gans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state>
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -39,10 +31,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/evaluate_rayleigh_gans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="45" selection-start-column="45" selection-end-column="45" />
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/infer/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -68,13 +68,15 @@
         <option value="$PROJECT_DIR$/test/evaluate_dls_infer.py" />
         <option value="$PROJECT_DIR$/dls_infer.py" />
         <option value="$PROJECT_DIR$/rayleigh-gans.py" />
+        <option value="$PROJECT_DIR$/infer/rayleigh_gans.py" />
         <option value="$PROJECT_DIR$/test/evaluate_rayleigh_gans.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="x" value="-169" />
+    <option name="y" value="45" />
+    <option name="width" value="1394" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -111,6 +113,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -141,10 +146,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="726" extended-state="0" />
+    <frame x="-169" y="45" width="1394" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984227" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984227" visible="true" weight="0.22869629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50157726" side_tool="true" weight="0.2494043" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -183,9 +188,6 @@
     <entry file="file://$PROJECT_DIR$/test/evaluate_post_infer.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/infer/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/infer/post_infer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -212,17 +214,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infer/rayleigh-gans.py">
+    <entry file="file://$PROJECT_DIR$/infer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infer/rayleigh_gans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/evaluate_rayleigh_gans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

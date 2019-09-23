@@ -4,7 +4,7 @@ import numpy as np
 # File to hold code that would generate the angular dependent scatttering
 
 
-class rayleigh_gans:
+class Rayleigh_Gans:
     def __init__(self, n_p, n_s, d, angle, wavelength):
         self.n_p = n_p
         self.n_s = n_s
