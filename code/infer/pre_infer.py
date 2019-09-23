@@ -14,11 +14,13 @@ import scipy
 #       normconst : the normalization constant that is eventually returned
 # RETURNS:
 #       normconst : normalization constant to multiply to the input f distribution to normalize the distribution
+
 def normalize(f, mie_fraction, delta_d):
-    g1_integrad = f*mie_fraction
-    integral = scipy.integrate.trapz(g1_integrad, dx=delta_d)
+    g1_integrand = f*mie_fraction
+    integral = scipy.integrate.trapz(g1_integrand, dx=delta_d)
     normconst = 1/integral
     return normconst
+
 
 def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
     q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)

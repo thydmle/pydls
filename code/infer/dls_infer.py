@@ -1,10 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import emcee
-import post_infer
-import scipy
-import scipy.optimize
-import scipy.integrate
 import pre_infer
 
 
@@ -21,7 +16,6 @@ def g2(theta, d, gamma, time):
         sum_squared = (np.sum(f * expo * delta_d))**2
         y[i] = beta * sum_squared
     return y
-
 
 
 def numerical_deriv(f, degree):
@@ -41,8 +35,6 @@ def log_prior(theta, m):
     for i in range(m):
         if f[i] < 0:
             not_ok = True
- #   if beta <= 0 or beta > 2:
- #      not_ok = True
     if not_ok:
         return -np.inf
     else:
@@ -62,8 +54,6 @@ def log_prior_beta(theta, m):
         return -((beta-beta_0)**2)/(2*sigma**2)
 
 
-# TODO: don't need m if you have d
-#DONE
 def log_likelihood(theta, d, y, m, gamma, time):
     g2_result = g2(theta, d, m, gamma, time)
     # keep in mind that g2 will require beta factor in the future
