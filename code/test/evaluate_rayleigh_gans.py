@@ -6,8 +6,8 @@ n_p = 1.33
 d = 4.48e-9
 angle = np.pi / 2
 wavelength = 638e-9
-very_small_diameter = d * 10 ** -7
-very_large_diameter = d * 10 ** 7
+very_small_diameter = d * 10**-7
+very_large_diameter = d * 10**7
 
 
 def rayleigh_coefficient(angle_in, radius_in, wavelength_in, n_s_in, n_p_in):
