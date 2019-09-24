@@ -17,6 +17,10 @@ sigma = 2e-10
 
 
 def get_lin_time():
+    '''
+    TODO: takes no arguments. Shouldn't these things (e.g., units in ms) 
+    not be hard-wired?
+    '''
     return np.linspace(1e-4, 1e-1, 200)*0.001
 
 
