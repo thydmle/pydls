@@ -1,10 +1,10 @@
-
 import sys
-sys.path.insert(0, '/Desktop/Personal/Research/SU2019/pydls/code/infer')
+sys.path.insert(0, "/Desktop/Personal/Research/SU2019/pydls/code")
+from infer.pre_infer import normalize, generate_distribution
 import numpy as np
 import scipy
 import scipy.integrate
-from infer.pre_infer import normalize, generate_distribution
+
 
 
 d = []
@@ -28,10 +28,10 @@ def test_normalize():
     test_constants = []
     norm_constants = []
     for i in range(len(d)):
-        test_f[i] = generate_nonnormal_distr(d[i], mean[i], sigma)
+        test_f.append(generate_nonnormal_distr(d[i], mean[i], sigma))
     for i in range(len(test_f)):
-        test_constants[i] = 1 / (scipy.integrate.trapz(test_f[i], d[i][1] - d[i][0]))
-        norm_constants[i] = normalize(test_f[i], 1, d[i][1] - d[i][0])
+        test_constants.append(1 / (scipy.integrate.trapz(test_f[i], d[i][1] - d[i][0])))
+        norm_constants.append(normalize(test_f[i], 1, d[i][1] - d[i][0]))
         assert test_constants[i] == norm_constants[i]
 
 

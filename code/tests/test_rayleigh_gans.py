@@ -1,6 +1,8 @@
 from infer.rayleigh_gans import Rayleigh_Gans
 import numpy as np
 
+#TODO
+
 n_s = 1
 n_p = 1.33
 d = 4.48e-9
