@@ -1,10 +1,7 @@
-# import sys
-# sys.path.append("/Desktop/Personal/Research/dls/pydls/code/infer")
 import infer.pre_infer as pre_infer
 import numpy as np
 import scipy
 import scipy.integrate
-
 
 d = []
 for i in range(10):
