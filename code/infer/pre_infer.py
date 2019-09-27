@@ -2,7 +2,7 @@ import numpy as np
 import scipy
 import scipy.integrate
 
-# TESTED, passed 9/26
+
 def normalize(f, rayleigh_gans_fract, delta_d):
     g1_integrand = f * rayleigh_gans_fract
     integral = scipy.integrate.trapz(g1_integrand, dx=delta_d)
@@ -19,7 +19,7 @@ def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
 def check_distribution_norm(f, delta_d):
     return scipy.integrate.trapz(f, dx=delta_d)
 
-# TESTED, passed 9/26
+
 def generate_distribution(d, mean, sigma, rayleigh_gans_fract):
     f = (1/(sigma*np.sqrt(2*np.pi)))*np.exp(-0.5*((d-mean)/sigma)**2)
     normconst = normalize(f, rayleigh_gans_fract, d[1]-d[0])

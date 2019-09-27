@@ -49,3 +49,26 @@ def test_distr_generator():
         for k in range(10):
             assert current_test[k] == current_counter[k]
 
+
+eta = np.linspace(1, 11, 11)
+n = np.ones(11)
+angle = np.full(11, fill_value=np.pi)
+k_b = np.full(11, fill_value=1.39e-23)
+t = np.full(11, fill_value=298)
+lambda_0 = np.full(11, fill_value=630)
+
+counter_gamma = []
+for i in range(11):
+    counter_gamma.append((16 * np.pi * (n[i]**2) * ((np.sin(angle[i] / 2))**2) * k_b[i] * t[i]) /
+                         (3 * (lambda_0[i]**2) * eta[i]))
+
+test_gamma = []
+for i in range(11):
+    test_gamma.append(pre_infer.calc_gamma(eta[i], n[i], angle[i], k_b[i], t[i], lambda_0[i]))
+
+
+def test_calc_gamma():
+    for y in range(11):
+        assert test_gamma[y] == counter_gamma[y]
+
+

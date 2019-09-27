@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6154e765-95bb-4662-86e8-4b8ee742afe0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/infer/pre_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/infer/pre_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_dls_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_post_infer.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_pre_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_pre_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_rayleigh_gans.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,26 +19,17 @@
     <favorites_list name="code" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40442804">
+    <splitter split-orientation="horizontal" split-proportion="0.43828893">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/test_pre_infer.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="51" selection-start-line="51" selection-end-line="51" />
-                  <folding>
-                    <element signature="e#82#117#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.travis.yml">
+            <entry file="file://$PROJECT_DIR$/infer/pre_infer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="16" selection-start-column="16" selection-end-column="16" />
+                <state relative-caret-position="198">
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -49,13 +39,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/infer/pre_infer.py">
+            <entry file="file://$PROJECT_DIR$/tests/test_pre_infer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="649">
+                  <caret line="74" selection-start-line="74" selection-end-line="74" />
                 </state>
               </provider>
             </entry>
@@ -89,17 +76,17 @@
         <option value="$PROJECT_DIR$/test/evaluate_pre_infer.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/tests/test_rayleigh_gans.py" />
-        <option value="$PROJECT_DIR$/infer/pre_infer.py" />
-        <option value="$PROJECT_DIR$/tests/test_pre_infer.py" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/tests/test_pre_infer.py" />
+        <option value="$PROJECT_DIR$/infer/pre_infer.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="12" />
     <option name="y" value="23" />
-    <option name="width" value="1505" />
-    <option name="height" value="726" />
+    <option name="width" value="1477" />
+    <option name="height" value="724" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -236,9 +223,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="264" y="79" width="1505" height="726" extended-state="0" />
+    <frame x="12" y="23" width="1477" height="724" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984227" visible="true" weight="0.17048517" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984227" visible="true" weight="0.16071428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50157726" side_tool="true" weight="0.2494043" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -249,9 +236,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329653" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329653" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.329653" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32911393" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.329653" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.328594" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -286,9 +273,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_dls_infer.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_dls_infer.py" />
     <entry file="file://$PROJECT_DIR$/infer/dls_infer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -299,9 +284,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_post_infer.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_post_infer.py" />
     <entry file="file://$PROJECT_DIR$/infer/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -312,16 +295,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_rayleigh_gans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_rayleigh_gans.py" />
     <entry file="file://$PROJECT_DIR$/infer/initialization_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -332,30 +306,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml" />
+    <entry file="file://$PROJECT_DIR$/tests/test_pre_infer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="649">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/infer/pre_infer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="198">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_pre_infer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#82#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
