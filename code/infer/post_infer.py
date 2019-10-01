@@ -51,3 +51,13 @@ def get_beta(chained_sampler, ndim):
     beta = {'beta': traces[ndim-1]}
     beta_df = pd.DataFrame(beta)
     return beta_df
+
+
+# returns HDF file
+def save_infer(df, filename):
+    return df.to_hdf(filename, key='df', mode='w')
+
+
+# reads HDF file to return a dataframe
+def read_hdf(hdf, key):
+    return pd.read_hdf(hdf, key)
