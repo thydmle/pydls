@@ -38,17 +38,20 @@ for t in range(10):
 
 test_bimodal_distributions = []
 for f in range(10):
-    test_bimodal_distributions.append(pre_infer.generate_bimodal_distribution(d[f], mean[f], mean[f] + 2, sigma[f],
-                                                                              sigma[f], 1))
+    test_bimodal_distributions.append(pre_infer.generate_bimodal_distribution(d[f], mean[f], sigma[f], mean[f] + 2,
+                                                                              sigma[f] + 2, 1))
 
 counter_bimodal_distributions = []
 for f in range(10):
-    f1 = 1 / (sigma[f] * np.sqrt(2 * np.pi ** 2)) * np.exp(-(d[f] - mean[f]) ** 2 / (2 * sigma[f] ** 2))
-    f1 = f1 * pre_infer.normalize(f1, 1, d[1] - d[0])
+    f1 = 1 / (sigma[f] * np.sqrt(2 * np.pi**2)) * np.exp(-(d[f] - mean[f]) ** 2 / (2 * sigma[f] ** 2))
+    f1 = f1 * pre_infer.normalize(f1, 1, d[f][1] - d[f][0])
 
-    f2 = 1 / ((sigma[f] + 2) * np.sqrt(2 * np.pi ** 2)) * np.exp(-(d[f] - mean[f] + 2) ** 2 / (2 * (sigma[f] + 2)**2))
-    f2 = f2 * pre_infer.normalize(f2, 1, d[1] - d[0])
-    counter_bimodal_distributions.append(f1 + f2)
+    f2 = 1 / ((sigma[f] + 2) * np.sqrt(2 * np.pi**2)) * np.exp(-(d[f] - (mean[f] + 2)) ** 2 / (2 * (sigma[f] + 2)**2))
+    f2 = f2 * pre_infer.normalize(f2, 1, d[f][1] - d[f][0])
+
+    z = f1 + f2
+    z = z * pre_infer.normalize(z, 1, d[f][1] - d[f][0])
+    counter_bimodal_distributions.append(z)
 
 
 def test_normalize():
@@ -88,7 +91,7 @@ def test_calc_gamma():
 
 def test_bimodal_distribution():
     for g in range(10):
-        current_test = test_bimodal_distribution[g]
+        current_test = test_bimodal_distributions[g]
         current_counter = counter_bimodal_distributions[g]
         for k in range(10):
             assert current_test[k] == current_counter[k]
