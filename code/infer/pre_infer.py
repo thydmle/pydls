@@ -56,7 +56,7 @@ def generate_unequal_bimodal_distribution(d, mean1, sigma1, mean2, sigma2, mie_f
 def calc_gamma(eta, n, angle, k_b, t, lambda_0):
     return (16*np.pi*(n**2)*((np.sin(angle/2))**2)*k_b*t) / (3*(lambda_0**2)*eta)
 
-
-def single_exponential_fit(t, C, const, B):
-    return const*np.exp(-C*t) + B
+# tested
+def single_exponential_fit(time, C, const, B):
+    return const*np.exp(-C*time) + B
 

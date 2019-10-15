@@ -121,3 +121,19 @@ def test_single_exponential():
         counter = counter_single_exponential_fit[i]
         for g in range(10):
             assert current[g] == counter[g]
+
+counter_radius = []
+for i in range(10):
+    q = ((4 * np.pi * n[i]) / lambda_0[i]) * np.sin(angle[i]/ 2)
+    D = C / (q ** 2) / 0.001
+    counter_radius.append( (k_b[i] * t[i]) / (6 * np.pi * eta[i] * D))
+
+
+test_radius = []
+for i in range(10):
+    test_radius.append(pre_infer.determine_radius(C, n[i], lambda_0[i], angle[i], eta[i], k_b[i], t[i]))
+
+def test_determine_radius():
+    for i in range(10):
+        assert counter_radius[i] == test_radius[i]
+
