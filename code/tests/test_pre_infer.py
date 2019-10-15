@@ -95,3 +95,29 @@ def test_bimodal_distribution():
         current_counter = counter_bimodal_distributions[g]
         for k in range(10):
             assert current_test[k] == current_counter[k]
+
+
+time = []
+for i in range(10):
+    time.append(np.logspace(-3, 1, 10))
+
+C = 4
+const = 2
+B = 1
+
+test_single_exponential_fit = []
+for i in range(10):
+    test_single_exponential_fit.append(pre_infer.single_exponential_fit(time[i], C, const, B))
+
+counter_single_exponential_fit = []
+for i in range(10):
+    result = const * np.exp(-C * time[i]) + B
+    counter_single_exponential_fit.append(result)
+
+
+def test_single_exponential():
+    for i in range(10):
+        current = test_single_exponential_fit[i]
+        counter = counter_single_exponential_fit[i]
+        for g in range(10):
+            assert current[g] == counter[g]
