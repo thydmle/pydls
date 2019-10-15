@@ -10,7 +10,7 @@ def normalize(f, rayleigh_gans_fract, delta_d):
     normconst = 1/integral
     return normconst
 
-
+# tested
 def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
     q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)
     D = C/(q**2) / 0.001

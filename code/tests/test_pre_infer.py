@@ -122,6 +122,7 @@ def test_single_exponential():
         for g in range(10):
             assert current[g] == counter[g]
 
+
 counter_radius = []
 for i in range(10):
     q = ((4 * np.pi * n[i]) / lambda_0[i]) * np.sin(angle[i]/ 2)
@@ -133,7 +134,22 @@ test_radius = []
 for i in range(10):
     test_radius.append(pre_infer.determine_radius(C, n[i], lambda_0[i], angle[i], eta[i], k_b[i], t[i]))
 
+
 def test_determine_radius():
     for i in range(10):
         assert counter_radius[i] == test_radius[i]
 
+
+test_norms = []
+for i in range(10):
+    test_norms.append(pre_infer.check_distribution_norm(test_distributions[i], d[i][1] - d[i][0]))
+
+
+counter_norms = []
+for i in range(10):
+    counter_norms.append(scipy.integrate.trapz(test_distributions[i], dx=(d[i][1] - d[i][0])))
+
+
+def test_check_distribution_norm():
+    for i in range(10):
+        assert counter_norms[i] == test_norms[i]
