@@ -40,7 +40,9 @@ def test_log_likelihood():
     assert likelihood == 0
 
 
-
+def test_numerical_deriv():
+    deriv = numerical_deriv(test_distribution, 2)
+    assert len(deriv) == len(test_distribution)
 
 
 
