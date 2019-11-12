@@ -17,3 +17,5 @@
 *.blg
 *.pyc
 *.pyd
+venv/
+*.xml

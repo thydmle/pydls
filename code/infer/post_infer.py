@@ -54,10 +54,9 @@ def get_beta(chained_sampler, ndim):
 
 
 # returns HDF file
-def save_infer(df, filename):
-    return df.to_hdf(filename, key='df', mode='w')
+def save_infer(df, filepath):
+    return df.to_pickle(filepath)
 
 
-# reads HDF file to return a dataframe
-def read_hdf(hdf, key):
-    return pd.read_hdf(hdf, key)
+def read_infer(filepath):
+    return pd.read_pickle(filepath)
