@@ -10,6 +10,7 @@ def normalize(f, rayleigh_gans_fract, delta_d):
     normconst = 1/integral
     return normconst
 
+
 # tested
 def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
     q = ((4*np.pi*n)/lambda_0)*np.sin(theta/2)
@@ -17,6 +18,7 @@ def determine_radius(C, n, lambda_0, theta, eta, k_b, t):
     return (k_b*t)/(6*np.pi*eta*D)
 
 
+# tested
 def check_distribution_norm(f, delta_d):
     return scipy.integrate.trapz(f, dx=delta_d)
 
@@ -27,6 +29,7 @@ def generate_distribution(d, mean, sigma, rayleigh_gans_fract):
     normconst = normalize(f, rayleigh_gans_fract, d[1]-d[0])
     f = normconst * f
     return f
+
 
 # tested
 def generate_bimodal_distribution(d, mean1, sigma1, mean2, sigma2, mie_fract):

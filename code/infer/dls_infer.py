@@ -1,6 +1,7 @@
 import numpy as np
 import emcee
-import pre_infer
+from infer.pre_infer import normalize
+import infer.post_infer
 
 
 def g2(theta, d, gamma, time):
@@ -10,7 +11,7 @@ def g2(theta, d, gamma, time):
     size = len(time)
     y = np.zeros(size)
     delta_d = d[1] - d[0]
-    f = f * pre_infer.normalize(f, 1, delta_d)
+    f = f * normalize(f, 1, delta_d)
     for i in range(size):
         expo = np.exp(-(gamma * time[i]) / d)
         sum_squared = (np.sum(f * expo * delta_d))**2
@@ -55,7 +56,7 @@ def log_prior_beta(theta, m):
 
 
 def log_likelihood(theta, d, y, m, gamma, time):
-    g2_result = g2(theta, d, m, gamma, time)
+    g2_result = g2(theta, d, gamma, time)
     # keep in mind that g2 will require beta factor in the future
     residuals = (y - g2_result)**2
     chi_square = np.sum(residuals)
@@ -66,7 +67,7 @@ def log_posterior(theta, d, y, m, gamma, time):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
 
-    return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood(theta, d, y, gamma, time)
+    return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
 
 
 def create_start_pos(theta, ndim, nwalkers):
