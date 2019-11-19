@@ -19,3 +19,5 @@
 *.pyd
 venv/
 *.xml
+*.iml
+.idea/

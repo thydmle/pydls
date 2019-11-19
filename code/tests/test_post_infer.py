@@ -6,11 +6,12 @@ import matplotlib.pyplot as plt
 import pandas
 from infer.pre_infer import calc_gamma, generate_distribution
 from infer.post_infer import chain, create_dataframe, get_infer_f, get_beta, save_infer
+import unittest
 
 m = 20
 c = 1
 eta = 1e-3
-angle = np.pi/2
+angle = np.pi / 2
 n = 1.33
 k_b = 1.38e-23
 t = 298.15
@@ -22,7 +23,7 @@ r = 2.2439608235145855e-09
 sigma = 2e-10
 
 d = np.linspace(start, stop, m)
-time = np.logspace(-4, -1, num=200, base=10)* 0.001
+time = np.logspace(-4, -1, num=200, base=10) * 0.001
 mean = (stop - start) / 2
 gamma = calc_gamma(eta, n, angle, k_b, t, lambda_0)
 
@@ -44,6 +45,14 @@ chained_sampler = chain(inference, 900, ndim)
 output_df = create_dataframe(chained_sampler, m)
 
 
-def test_pickle():
-    #save_infer(output_df, "11/12/2019-testdf")
-    print('hello world')
+class PostInferTest(unittest.TestCase):
+
+    def test_pickle(self):
+        # create new file?
+        # error is throwing, saying that file not found
+
+        print('Pickling and inference started')
+        save_infer(output_df, "11182019-data")
+        assert True
+
+
