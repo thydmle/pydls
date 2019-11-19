@@ -55,4 +55,8 @@ class PostInferTest(unittest.TestCase):
         save_infer(output_df, "11182019-data")
         assert True
 
+    def test_open_pickle(self):
+        output = open("11182019-data")
+        output.close()
+        assert True
 
