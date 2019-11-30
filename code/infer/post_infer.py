@@ -37,7 +37,7 @@ def create_dataframe(chained_sampler, param_num):
     samples_df = pd.DataFrame(samples_dictionary)
     return samples_df
 
-
+# m has to be ndim-2 because indexing issues
 def get_infer_f(quantiled_samples, m):
     array = np.zeros(m)
     for i in range(m):

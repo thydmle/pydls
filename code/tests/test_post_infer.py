@@ -35,29 +35,44 @@ test_data = g2(theta_input, d, gamma, time)
 ndim = 21
 nwalkers = 100
 nsteps = 1000
+#
+# start_pos = create_start_pos(theta_input, ndim, nwalkers)
+# sampler = create_sampler(nwalkers, ndim, d, test_data, m, gamma, time)
+#
+# inference = infer(sampler, start_pos, nsteps)
+#
+# chained_sampler = chain(inference, 900, ndim)
+# output_df = create_dataframe(chained_sampler, m)
 
-start_pos = create_start_pos(theta_input, ndim, nwalkers)
-sampler = create_sampler(nwalkers, ndim, d, test_data, m, gamma, time)
-
-inference = infer(sampler, start_pos, nsteps)
-
-chained_sampler = chain(inference, 900, ndim)
-output_df = create_dataframe(chained_sampler, m)
-
+saved_output = pandas.read_pickle("11182019-data")
+data = saved_output.quantile([0.5], axis=0)
 
 class PostInferTest(unittest.TestCase):
 
-    def test_pickle(self):
-        # create new file?
-        # error is throwing, saying that file not found
-
-        print('Pickling and inference started')
-        save_infer(output_df, "11182019-data")
-        assert True
+    # def test_pickle(self):
+    #     # create new file?
+    #     # error is throwing, saying that file not found
+    #
+    #     print('Pickling and inference started')
+    #     save_infer(output_df, "11182019-data")
+    #     assert True
 
     def test_open_pickle(self):
         output = open("11182019-data")
         output.close()
         assert True
+
+    def test_get_infer_f(self):
+        test_infer = get_infer_f(data, m -1)
+
+        actual_infer = np.zeros(m-1)
+        for i in range(m - 1):
+            a = data.get("f" + str(i)).values
+            actual_infer[i] = a[0]
+
+        for j in range(m - 1):
+            assert test_infer[j] == actual_infer[j]
+        print(len(actual_infer))
+    # m passed in has to have m - 1 value
 
 # DO NOT ADD .IDEA FOLDER
