@@ -60,3 +60,4 @@ class PostInferTest(unittest.TestCase):
         output.close()
         assert True
 
+# DO NOT ADD .IDEA FOLDER
