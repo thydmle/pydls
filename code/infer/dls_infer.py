@@ -2,6 +2,7 @@ import numpy as np
 import emcee
 from infer.pre_infer import normalize
 import infer.post_infer
+from infer.rayleigh_gans import Rayleigh_Gans as rg
 
 
 def g2(theta, d, gamma, time):
@@ -15,6 +16,37 @@ def g2(theta, d, gamma, time):
     for i in range(size):
         expo = np.exp(-(gamma * time[i]) / d)
         sum_squared = (np.sum(f * expo * delta_d))**2
+        y[i] = beta * sum_squared
+    return y
+
+
+def g2_multiangle(theta, d, gamma, n_p, n_s, angle, wavelength, time):
+    """
+
+    :param theta: tuple of starting particle size distribution, plus beta appended in the end of the tuple
+    :param d: array of particle diameters
+    :param gamma: gamma factor previously calculatd
+    :param n_p: index of refraction of the particle (scatterer)
+    :param n_s: index of refraction of surrounding
+    :param angle: angle at which this specific g2 measurement was made. IS IMPORTANT for multiangle. EACH g2 HAS ITS OWN
+                    angle and thus altering the rayleigh coefficient and thus the likelihood distribution
+    :param wavelength: laser's wavelength
+    :param time: time scale in ms
+    :return: array of scattered intensity for each diameter member within d
+    """
+    m = len(d)
+    beta = theta[m]
+    f = theta[0:m]
+    size = len(time)
+    y = np.zeros(size)
+    delta_d = d[1] - d[0]
+    # have to calculate Rayleigh-Gans coefficient prior to normalizing
+    # because normalization step uses rayleigh-gans coefficient
+    for i in range(size):
+        rayleigh_gans = rg(n_p, n_s, d[i], angle, wavelength)
+        f = f * normalize(f, rayleigh_gans.s1, delta_d)
+        expo = np.exp(-(gamma * time[i]) / d[i])
+        sum_squared = (np.sum(f * rayleigh_gans.s1 * expo * delta_d))**2
         y[i] = beta * sum_squared
     return y
 
@@ -63,11 +95,22 @@ def log_likelihood(theta, d, y, m, gamma, time):
     return -(m/2)*chi_square
 
 
+def log_likelihood_multiangle(theta, d, y, gamma, n_p, n_s, angle, wavelength, time):
+    g2_result = g2_multiangle(theta, d, gamma, n_p, n_s, angle, wavelength, time)
+    residuals = (y - g2_result)**2
+    chi_square = np.sum(residuals)
+    return -(m/2) * chi_square
+
+
 def log_posterior(theta, d, y, m, gamma, time):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
 
     return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood(theta, d, y, m, gamma, time)
+
+
+def log_posterior_multiangle(theta, d, y, m, gamma, n_p, n_s, angle, wavelength, time):
+    return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood_multiangle(theta, d, y, gamma, n_p, n_s, angle, wavelength, time)
 
 
 def create_start_pos(theta, ndim, nwalkers):
