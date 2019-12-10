@@ -18,7 +18,7 @@ class Rayleigh_Gans:
         self.u = 2*np.pi * self.n_s * self.d / self.wavelength * np.sin(angle/2)
         self.volume = 4 * np.pi / 3 * (d / 2)**3
         self.m = n_p / n_s
-        self.f = 3 / self.u**3 * (np.sin(self.u) - self.u * np.cos(self.u))
+        self.f = (3 / self.u**3) * (np.sin(self.u) - self.u * np.cos(self.u))
 
     def calc_scattering_matrix(self):
         self.s1 = ((self.k**3) / (2 * np.pi)) * (self.m - 1) * self.volume * self.f
