@@ -42,14 +42,21 @@ def g2_multiangle(theta, d, gamma, n_p, n_s, angle, wavelength, time):
     delta_d = d[1] - d[0]
     # have to calculate Rayleigh-Gans coefficient prior to normalizing
     # because normalization step uses rayleigh-gans coefficient
+    coefficients = calc_rayleigh_gans(d, n_p, n_s, angle, wavelength)
+    f = f * normalize(f, coefficients, delta_d)
     for i in range(size):
-        rayleigh_gans = rg(n_p, n_s, d[i], angle, wavelength)
-        f = f * normalize(f, rayleigh_gans.s1, delta_d)
-        expo = np.exp(-(gamma * time[i]) / d[i])
-        sum_squared = (np.sum(f * rayleigh_gans.s1 * expo * delta_d))**2
+        expo = np.exp(-(gamma * time[i]) / d)
+        sum_squared = (np.sum(f * coefficients * expo * delta_d))**2
         y[i] = beta * sum_squared
     return y
 
+def calc_rayleigh_gans(d, n_p, n_s, angle, wavelength):
+    coefficients = []
+
+    for i in d:
+        current_rg = rg(n_p, n_s, i, angle, wavelength)
+        coefficients.append(current_rg.s1)
+    return coefficients
 
 def numerical_deriv(f, degree):
     result = np.zeros(len(f))
@@ -95,7 +102,7 @@ def log_likelihood(theta, d, y, m, gamma, time):
     return -(m/2)*chi_square
 
 
-def log_likelihood_multiangle(theta, d, y, gamma, n_p, n_s, angle, wavelength, time):
+def log_likelihood_multiangle(theta, d, y, m, gamma, n_p, n_s, angle, wavelength, time):
     g2_result = g2_multiangle(theta, d, gamma, n_p, n_s, angle, wavelength, time)
     residuals = (y - g2_result)**2
     chi_square = np.sum(residuals)
@@ -110,7 +117,8 @@ def log_posterior(theta, d, y, m, gamma, time):
 
 
 def log_posterior_multiangle(theta, d, y, m, gamma, n_p, n_s, angle, wavelength, time):
-    return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood_multiangle(theta, d, y, gamma, n_p, n_s, angle, wavelength, time)
+    return log_prior(theta, m) + log_prior_beta(theta, m) + log_likelihood_multiangle(theta, d, y, m,  gamma, n_p, n_s,
+                                                                                      angle, wavelength, time)
 
 
 def create_start_pos(theta, ndim, nwalkers):
@@ -122,6 +130,8 @@ def create_sampler(nwalkers, ndim, d, y, m, gamma, time):
     sampler = emcee.EnsembleSampler(nwalkers, ndim, log_posterior, args=(d, y, m, gamma, time))
     return sampler
 
+def create_sampler_multiangle(nwalkers, ndim, d, y, m, gamma, n_p, n_s, angle, wavelength, time):
+    pass
 
 def infer(sampler, start_pos, nsteps):
     result = sampler.run_mcmc(start_pos, nsteps)
