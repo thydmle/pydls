@@ -123,7 +123,8 @@ def log_posterior(theta, d, y, m, gamma, time, guess_pos):
 
 
 def create_start_pos(theta, ndim, nwalkers):
-    start_pos = [theta + 1e-4*np.absolute(np.random.randn(ndim)) for i in range(nwalkers)]
+    start_pos = np.array([theta + 1e-4*np.absolute(np.random.randn(ndim))
+                          for i in range(nwalkers)])
     # start_pos / theta = relative ratio distribution that is input into inference
     # theta = actual (generated/true) distribution
     # start_pos = gaussan-balled distribution
