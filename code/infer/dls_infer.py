@@ -7,8 +7,8 @@ from infer.rayleigh_gans import Rayleigh_Gans as rg
 
 def g2(theta, d, gamma, time):
     m = len(d)
-    beta = theta[m]
-    f = theta[0:m]
+    beta = 1. # hard code for now, don't keep this
+    f = theta
     size = len(time)
     y = np.zeros(size)
     delta_d = d[1] - d[0]
@@ -67,8 +67,8 @@ def numerical_deriv(f, degree):
 
 
 def log_prior(theta, m):
-    beta = theta[m]
-    f = theta[0:m]
+    #beta = theta[m]
+    f = theta
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     not_ok = False
