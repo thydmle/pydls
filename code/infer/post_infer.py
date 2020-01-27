@@ -1,4 +1,4 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
@@ -16,12 +16,12 @@ def view_burnin_plot(sampler, first_param, second_param):
               'ytick.labelsize': 'x-large'}
 
     fig, (ax0, ax1) = plt.subplots(2)
-    ax0.set(ylabel='f(d' + str(first_param) + ')')
-    ax1.set(ylabel='f(d' + str(second_param) + ')')
+    ax0.set(ylabel='Bin')
+    ax1.set(ylabel='Bin')
 
     for j in range(10):
-        sns.tsplot(sampler.chain[j, :, first_param], ax=ax0)
-        sns.tsplot(sampler.chain[j, :, second_param], ax=ax1)
+        sns.tsplot(sampler.chain[j, :, int(first_param)], ax=ax0)
+        sns.tsplot(sampler.chain[j, :, int(second_param)], ax=ax1)
     # plots 2 inferred parameters at a time
 
 
