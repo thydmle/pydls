@@ -100,7 +100,7 @@ def log_likelihood(theta, d, y, m, gamma, time, guess_pos):
     # keep in mind that g2 will require beta factor in the future
     residuals = (y - g2_result)**2
     chi_square = np.sum(residuals)
-    return -(m/2)*chi_square
+    return -(m/2)* np.log(chi_square)
 
 
 def log_likelihood_multiangle(theta, d, y, m, gamma, n_p, n_s, angle, wavelength, time):
