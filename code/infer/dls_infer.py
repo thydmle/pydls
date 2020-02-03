@@ -66,9 +66,13 @@ def numerical_deriv(f, degree):
     return result
 
 
-def log_prior(theta, m, guess_pos):
+def log_prior(theta, m, guess_pos, d):
     #beta = theta[m]
     f = theta * guess_pos
+    # distribution needs to be normalized at all steps 
+    # therefore also needs to be normalized here
+    # 2/3/20
+    f = f * normalize(f, 1, d[1] - d[0])
     f_2nd_deriv = numerical_deriv(f, 2)
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     not_ok = False
@@ -111,7 +115,7 @@ def log_posterior(theta, d, y, m, gamma, time, guess_pos):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
 
-    return log_prior(theta, m, guess_pos) + log_likelihood(theta, d, y, m, gamma, time, guess_pos)
+    return log_prior(theta, m, guess_pos, d) + log_likelihood(theta, d, y, m, gamma, time, guess_pos)
 
 
 #def log_posterior_multiangle(theta, d, y, m, gamma, n_p, n_s, angle, wavelength, time):
