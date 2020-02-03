@@ -114,7 +114,7 @@ def log_likelihood_multiangle(theta, d, y, m, gamma, n_p, n_s, angle, wavelength
 def log_posterior(theta, d, y, m, gamma, time, guess_pos):
     # theta will be an array of size (m+1, )
     # log_prior and log_likelihood will need to slice theta correctly
-
+    theta = theta * normalize(theta, 1, d[1] - d[0])
     return log_prior(theta, m, guess_pos, d) + log_likelihood(theta, d, y, m, gamma, time, guess_pos)
 
 
