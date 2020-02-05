@@ -58,13 +58,23 @@ def calc_rayleigh_gans(d, n_p, n_s, angle, wavelength):
         coefficients.append(current_rg.s1)
     return coefficients
 
-def numerical_deriv(f, degree):
-    result = np.zeros(len(f))
-    for i in range(degree):
-        result = np.gradient(f)
-        f = result
-    return result
+#def numerical_deriv(f, degree):
+#    result = np.zeros(len(f))
+#    for i in range(degree):
+#        result = np.gradient(f)
+#        f = result
+#    return result
 
+# 2/5/2020
+# correct implementation of the centered difference for numerical derivative
+def numerical_deriv(f, step_size):
+    result = np.zeros(len(f))
+    for i in range(len(f)):
+        if i == 0 or i == (len(f) - 1):
+	    result[i] = 0
+        else:
+            result[i] = ( f[i + 1] - 2*f[i] + f[i - 1] ) / (step_size**2)
+    return result
 
 def log_prior(theta, m, guess_pos, d):
     #beta = theta[m]
@@ -73,7 +83,7 @@ def log_prior(theta, m, guess_pos, d):
     # therefore also needs to be normalized here
     # 2/3/20
     f = f * normalize(f, 1, d[1] - d[0])
-    f_2nd_deriv = numerical_deriv(f, 2)
+    f_2nd_deriv = numerical_deriv(f, d[1] - d[0])
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     not_ok = False
     if (f < 0).any(): # check if any element of size dist is negative
