@@ -68,6 +68,9 @@ def calc_rayleigh_gans(d, n_p, n_s, angle, wavelength):
 # 2/5/2020
 # correct implementation of the centered difference for numerical derivative
 def numerical_deriv(f, step_size):
+    '''
+    Central difference calculation for *second* derivative.
+    '''
     result = np.zeros(len(f))
     for i in range(len(f)):
         if i == 0 or i == (len(f) - 1):
