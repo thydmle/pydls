@@ -25,3 +25,5 @@ tests/bayes_take_40_01152020.ipynb
 tests/bayes_take_41_01152020.ipynb
 11182019-data
 *.ipynb
+*.pdf
+*.docx
