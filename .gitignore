@@ -27,5 +27,5 @@ tests/bayes_take_41_01152020.ipynb
 *.ipynb
 *.pdf
 *.docx
-../present/
-../writeup/
+present/
+writeup/
