@@ -89,7 +89,7 @@ def log_prior(theta, m, guess_pos, d):
     f_2nd_deriv = numerical_deriv(f, d[1] - d[0])
     a = np.dot(f_2nd_deriv, f_2nd_deriv.transpose())
     not_ok = False
-    if (f < 0).any(): # check if any element of size dist is negative
+    if (theta < 0).any() or (f < 0).any(): # check if any element of size dist is negative
         return -np.inf
     else:
         return -a
