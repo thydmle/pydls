@@ -29,3 +29,5 @@ tests/bayes_take_41_01152020.ipynb
 *.docx
 present/
 writeup/
+gaussian_processes/
+*.zip

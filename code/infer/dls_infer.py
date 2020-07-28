@@ -92,7 +92,7 @@ def log_prior(theta, m, guess_pos, d):
     if (theta < 0).any() or (f < 0).any(): # check if any element of size dist is negative
         return -np.inf
     else:
-        return -a
+        return -a*0.01
 
 
 #def log_prior_beta(theta, m):
@@ -137,14 +137,15 @@ def log_posterior(theta, d, y, m, gamma, time, guess_pos):
 
 
 def create_start_pos(theta, ndim, nwalkers):
-    print(theta)
-    start_pos = np.array([theta + 1e-4*theta*np.absolute(np.random.randn(ndim))
-                          for i in range(nwalkers)])
-    print(start_pos)
+    #print(theta)
+   # part_to_add = 1e-4 * theta * np.absolute(np.random.randn(ndim))
+    start_pos = np.array([theta + 1e-4*theta*np.absolute(np.random.randn(ndim)) for i in range(nwalkers)])
+    # print(start_pos)
     # start_pos / theta = relative ratio distribution that is input into inference
     # theta = actual (generated/true) distribution
-    # start_pos = gaussan-balled distribution
-    return start_pos / theta
+    # start_pos = gaussan-balled distributio
+   # start_pos = np.array([theta/guess_pos + 1e-4 * (theta/guess_pos) * np.absolute(np.random.randn(ndim)) for i in range(nwalkers)])             
+    return start_pos/theta
 
 
 def create_sampler(nwalkers, ndim, d, y, m, gamma, time, guess_pos):
